@@ -320,7 +320,7 @@ footer{
 <div class="toast" id="toast"></div>
 
 <script>
-const API="https://script.google.com/macros/s/AKfycbxN-6p1-OVjMp94mnbw1WEOAjB4eRM16X8KfEtuuwL9owl_jK2hYv0Ex0vmODhiRJGV5A/exec";
+const API="/api/register";
 const START=new Date("2026-10-04T10:00:00+05:30").getTime();
 
 const formEl=document.getElementById("form");
@@ -475,7 +475,8 @@ formEl.addEventListener("submit",async (e)=>{
   try{
     const response=await fetch(API,{
       method:"POST",
-      body:new URLSearchParams(payload)
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify(payload)
     });
 
     if(!response.ok){
