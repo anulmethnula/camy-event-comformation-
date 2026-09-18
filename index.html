@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f1ed">
+<meta name="theme-color" content="#0b0808">
 <title>CAMY Community Event 2026</title>
 <meta name="description" content="Register for the CAMY Community Event on 04 October 2026 at Supun Arcade, Wellawatta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,15 +11,15 @@
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --wine:#8e1b22;
-  --wine-2:#b42d34;
-  --rose:#e8c7c9;
-  --ink:#241d1d;
-  --muted:#746b68;
-  --paper:#f7f2ee;
-  --paper-2:#fffdfa;
-  --line:#e9ddd8;
-  --shadow:0 22px 70px rgba(87,45,39,.12);
+  --wine:#c72b33;
+  --wine-2:#8f1117;
+  --rose:#e5b9bc;
+  --ink:#f7f3f1;
+  --muted:#a89e9a;
+  --paper:#0a0808;
+  --paper-2:#130d0d;
+  --line:rgba(255,255,255,.085);
+  --shadow:0 26px 90px rgba(0,0,0,.42);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -28,9 +28,9 @@ body{
   color:var(--ink);
   font-family:"DM Sans",system-ui,sans-serif;
   background:
-    radial-gradient(circle at 10% 0%,rgba(180,45,52,.08),transparent 30%),
-    radial-gradient(circle at 94% 28%,rgba(142,27,34,.06),transparent 24%),
-    var(--paper);
+    radial-gradient(circle at 10% 0%,rgba(162,24,31,.22),transparent 30%),
+    radial-gradient(circle at 94% 28%,rgba(115,14,20,.14),transparent 24%),
+    linear-gradient(180deg,#0b0808 0%,#100b0b 58%,#080606 100%);
   overflow-x:hidden;
 }
 body:before{
@@ -38,10 +38,10 @@ body:before{
   position:fixed;
   inset:0;
   pointer-events:none;
-  opacity:.45;
+  opacity:.28;
   background:
-    linear-gradient(rgba(142,27,34,.024) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(142,27,34,.024) 1px,transparent 1px);
+    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
   background-size:56px 56px;
   mask-image:linear-gradient(to bottom,#000,transparent 84%);
 }
@@ -57,7 +57,7 @@ nav{
   box-shadow:0 10px 30px rgba(71,38,35,.08)
 }
 .brand strong{display:block;font:800 17px Manrope;letter-spacing:-.02em}
-.brand span{display:block;font-size:12px;color:#8b817d;margin-top:2px}
+.brand span{display:block;font-size:12px;color:#8f8581;margin-top:2px}
 .badge{
   padding:9px 12px;border-radius:999px;
   border:1px solid #e5cdcf;background:rgba(255,255,255,.72);
@@ -78,7 +78,7 @@ h1{
 }
 h1 span{color:var(--wine)}
 .lead{
-  max-width:620px;font-size:16px;line-height:1.78;color:#6f6663;margin:0
+  max-width:620px;font-size:16px;line-height:1.78;color:#b3aaa6;margin:0
 }
 .notice{
   margin-top:28px;max-width:660px;padding:16px 18px;
@@ -86,7 +86,7 @@ h1 span{color:var(--wine)}
   color:#6d6461;font-size:12.5px;line-height:1.72;
   box-shadow:0 10px 28px rgba(80,50,45,.04)
 }
-.notice strong{color:#342c2a}
+.notice strong{color:#f2ece9}
 .event-info{
   display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
   max-width:650px;margin-top:22px
@@ -96,9 +96,9 @@ h1 span{color:var(--wine)}
   border:1px solid var(--line)
 }
 .info b{display:block;font:700 13px Manrope}
-.info span{display:block;color:#8d817d;font-size:11px;margin-top:3px}
+.info span{display:block;color:#918682;font-size:11px;margin-top:3px}
 .count-title{
-  margin-top:26px;font-size:10px;font-weight:800;letter-spacing:.13em;color:#948783
+  margin-top:26px;font-size:10px;font-weight:800;letter-spacing:.13em;color:#8f8581
 }
 .countdown{display:flex;gap:10px;margin-top:9px}
 .unit{
@@ -107,50 +107,50 @@ h1 span{color:var(--wine)}
   box-shadow:0 10px 25px rgba(74,42,37,.04)
 }
 .unit b{display:block;font:800 23px Manrope;letter-spacing:-.04em}
-.unit small{font-size:9px;color:#9b8d89;font-weight:800;letter-spacing:.09em}
+.unit small{font-size:9px;color:#827875;font-weight:800;letter-spacing:.09em}
 
 .form-card{
-  background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);
+  background:linear-gradient(160deg,rgba(31,22,22,.95),rgba(14,10,10,.96));border:1px solid rgba(255,255,255,.08);
   border-radius:28px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(16px);
   position:relative;overflow:hidden
 }
 .form-card:before{
   content:"";position:absolute;width:220px;height:220px;border-radius:50%;
-  right:-100px;top:-120px;background:rgba(142,27,34,.06);filter:blur(16px)
+  right:-100px;top:-120px;background:rgba(199,43,51,.08);filter:blur(16px)
 }
 .form-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:22px;position:relative}
 .form-head h2{font:800 24px Manrope;letter-spacing:-.04em;margin:0}
-.form-head p{margin:6px 0 0;font-size:12px;color:#8c807c}
+.form-head p{margin:6px 0 0;font-size:12px;color:#887d79}
 .step{
   padding:7px 9px;border-radius:999px;background:#f7ecec;border:1px solid #eed5d6;
   color:var(--wine);font-size:9px;font-weight:800;letter-spacing:.08em
 }
 .field{margin-bottom:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-label{display:block;font-size:10px;color:#756b67;font-weight:800;letter-spacing:.04em;margin-bottom:7px}
+label{display:block;font-size:10px;color:#a99e9a;font-weight:800;letter-spacing:.04em;margin-bottom:7px}
 input,textarea{
-  width:100%;border:1px solid #e5d9d5;background:#fff;color:#211b1a;
+  width:100%;border:1px solid rgba(255,255,255,.08);background:#100c0c;color:#f7f3f1;
   border-radius:13px;padding:14px 14px;font:inherit;outline:none;transition:.18s;
-  box-shadow:inset 0 1px rgba(255,255,255,.8)
+  box-shadow:inset 0 1px rgba(255,255,255,.02)
 }
 textarea{min-height:86px;resize:vertical}
-input:focus,textarea:focus{border-color:#c78387;box-shadow:0 0 0 4px rgba(142,27,34,.065)}
-input::placeholder,textarea::placeholder{color:#b6aaa6}
+input:focus,textarea:focus{border-color:rgba(199,43,51,.52);box-shadow:0 0 0 4px rgba(199,43,51,.08)}
+input::placeholder,textarea::placeholder{color:#625956}
 .counter{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}
 .counter button{
-  border:1px solid #e5d9d5;background:#faf5f3;color:var(--wine);
+  border:1px solid rgba(199,43,51,.18);background:#1a1212;color:#e2bfc1;
   border-radius:12px;font-size:21px;cursor:pointer
 }
 .counter input{text-align:center;font-weight:700}
 .attend{
   margin:2px 0 15px;padding:14px;border-radius:14px;
-  background:#fbf6f4;border:1px solid #eadfdb
+  background:#1c1313;border:1px solid rgba(199,43,51,.16)
 }
-.attend-title{font-size:10px;color:#817571;font-weight:800;margin-bottom:9px}
+.attend-title{font-size:10px;color:#948a86;font-weight:800;margin-bottom:9px}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .choice{position:relative}.choice input{position:absolute;opacity:0}
 .choice span{
   display:flex;min-height:44px;align-items:center;justify-content:center;
-  border:1px solid #e5d9d5;border-radius:11px;background:white;color:#746a66;
+  border:1px solid rgba(255,255,255,.08);border-radius:11px;background:#120d0d;color:#aaa09c;
   font-size:11px;font-weight:700;cursor:pointer;transition:.18s
 }
 .choice input:checked+span{
@@ -166,22 +166,22 @@ input::placeholder,textarea::placeholder{color:#b6aaa6}
   box-shadow:0 14px 30px rgba(142,27,34,.20)
 }
 .submit:hover,.download:hover{transform:translateY(-2px);filter:brightness(1.02)}
-.note{text-align:center;color:#9a8f8b;font-size:9.5px;margin-top:10px}
+.note{text-align:center;color:#756b68;font-size:9.5px;margin-top:10px}
 .success{display:none;text-align:center;padding:6px 0}
 .successMark{
   width:62px;height:62px;margin:0 auto 15px;border-radius:50%;
-  display:grid;place-items:center;background:#f6e7e7;color:var(--wine);font-size:27px
+  display:grid;place-items:center;background:#251617;color:#e24a51;font-size:27px
 }
 .success h2{font:800 27px Manrope;margin:0 0 8px}
-.success p{font-size:13px;line-height:1.6;color:#817571}
+.success p{font-size:13px;line-height:1.6;color:#a39995}
 .summary{
   margin:20px 0;padding:16px;border:1px solid var(--line);
   border-radius:14px;background:#fffaf7;text-align:left
 }
 .summary strong{display:block;margin-bottom:7px}
-.summary span{display:block;font-size:12px;color:#8b7f7b;line-height:1.7}
-.download{display:block;text-decoration:none;line-height:52px;background:#221b1a;color:#fff}
-.again{border:0;background:none;color:#8b7f7b;text-decoration:underline;margin-top:11px;cursor:pointer}
+.summary span{display:block;font-size:12px;color:#958a86;line-height:1.7}
+.download{display:block;text-decoration:none;line-height:52px;background:#f1e9e6;color:#1a1413}
+.again{border:0;background:none;color:#8e837f;text-decoration:underline;margin-top:11px;cursor:pointer}
 
 .bottom{
   padding:4px 0 70px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px
@@ -190,11 +190,11 @@ input::placeholder,textarea::placeholder{color:#b6aaa6}
   padding:18px;border-top:1px solid #d7c9c4;
   color:#6f6561;background:transparent
 }
-.perk b{display:block;color:#302725;font:700 14px Manrope;margin-bottom:6px}
+.perk b{display:block;color:#f0e9e6;font:700 14px Manrope;margin-bottom:6px}
 .perk span{font-size:12px;line-height:1.55}
 footer{
-  border-top:1px solid #ded2cd;padding:24px 0 34px;
-  color:#928681;font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
+  border-top:1px solid rgba(255,255,255,.07);padding:24px 0 34px;
+  color:#716764;font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
 }
 .toast{
   position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);opacity:0;z-index:20;
@@ -332,34 +332,34 @@ tick();setInterval(tick,1000);
 function round(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
 function invitation(person,rid){
   const c=document.createElement("canvas");c.width=1200;c.height=1500;const x=c.getContext("2d");
-  const bg=x.createLinearGradient(0,0,1200,1500);bg.addColorStop(0,"#f8f2ee");bg.addColorStop(.55,"#fffdf9");bg.addColorStop(1,"#f5ebe6");x.fillStyle=bg;x.fillRect(0,0,1200,1500);
-  x.fillStyle="rgba(142,27,34,.07)";x.beginPath();x.arc(1000,210,330,0,Math.PI*2);x.fill();
-  x.strokeStyle="#d8c8c2";x.lineWidth=2;x.strokeRect(62,62,1076,1376);
-  x.strokeStyle="#8e1b22";x.lineWidth=4;x.strokeRect(82,82,1036,1336);
+  const bg=x.createLinearGradient(0,0,1200,1500);bg.addColorStop(0,"#090707");bg.addColorStop(.55,"#150d0e");bg.addColorStop(1,"#080606");x.fillStyle=bg;x.fillRect(0,0,1200,1500);
+  x.fillStyle="rgba(199,43,51,.12)";x.beginPath();x.arc(1000,210,330,0,Math.PI*2);x.fill();
+  x.strokeStyle="rgba(255,255,255,.14)";x.lineWidth=2;x.strokeRect(62,62,1076,1376);
+  x.strokeStyle="#a62229";x.lineWidth=4;x.strokeRect(82,82,1036,1336);
 
   const logo=document.querySelector(".brand img");
   x.fillStyle="#fff";round(x,480,110,240,240,34);x.fill();
   if(logo.complete)x.drawImage(logo,515,145,170,170);
 
   x.textAlign="center";
-  x.fillStyle="#8e1b22";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,425);
-  x.fillStyle="#241d1d";x.font="800 78px Arial";x.fillText("OFFICIAL",600,560);x.fillText("INVITATION",600,640);
-  x.fillStyle="#7a706c";x.font="26px Arial";x.fillText("Join the room. Meet the right people.",600,700);
-  x.fillStyle="#8e1b22";x.fillRect(485,755,230,5);
+  x.fillStyle="#df5359";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,425);
+  x.fillStyle="#ffffff";x.font="800 78px Arial";x.fillText("OFFICIAL",600,560);x.fillText("INVITATION",600,640);
+  x.fillStyle="#b7aaa6";x.font="26px Arial";x.fillText("Join the room. Meet the right people.",600,700);
+  x.fillStyle="#b7282f";x.fillRect(485,755,230,5);
 
-  x.fillStyle="#8f837f";x.font="700 19px Arial";x.fillText("RESERVED FOR",600,840);
-  x.fillStyle="#241d1d";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,905);
+  x.fillStyle="#807572";x.font="700 19px Arial";x.fillText("RESERVED FOR",600,840);
+  x.fillStyle="#ffffff";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,905);
 
-  x.fillStyle="#fff";round(x,210,1000,780,220,28);x.fill();
-  x.strokeStyle="#e6d9d4";x.lineWidth=2;round(x,210,1000,780,220,28);x.stroke();
+  x.fillStyle="rgba(255,255,255,.045)";round(x,210,1000,780,220,28);x.fill();
+  x.strokeStyle="rgba(255,255,255,.09)";x.lineWidth=2;round(x,210,1000,780,220,28);x.stroke();
 
-  x.fillStyle="#241d1d";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1070);
-  x.fillStyle="#746a66";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1125);
-  x.fillStyle="#8e1b22";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1185);
+  x.fillStyle="#ffffff";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1070);
+  x.fillStyle="#b8adaa";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1125);
+  x.fillStyle="#e04a50";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1185);
 
-  x.fillStyle="#7f7470";x.font="20px Arial";x.fillText("Lunch + Welcome Drink Included",600,1260);
-  x.fillStyle="#998b86";x.font="19px Arial";x.fillText("Registration ID: "+rid,600,1330);
-  x.fillStyle="#9c8f89";x.font="16px Arial";x.fillText("Please keep this invitation with you when attending.",600,1378);
+  x.fillStyle="#aaa09c";x.font="20px Arial";x.fillText("Lunch + Welcome Drink Included",600,1260);
+  x.fillStyle="#7f7572";x.font="19px Arial";x.fillText("Registration ID: "+rid,600,1330);
+  x.fillStyle="#887d79";x.font="16px Arial";x.fillText("Please keep this invitation with you when attending.",600,1378);
 
   return c.toDataURL("image/png");
 }
