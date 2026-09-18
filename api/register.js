@@ -1,4 +1,4 @@
-﻿const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbxN-6p1-OVjMp94mnbw1WEOAjB4eRM16X8KfEtuuwL9owl_jK2hYv0Ex0vmODhiRJGV5A/exec';
+const DEFAULT_URL = 'https://script.google.com/macros/s/AKfycbxN-6p1-OVjMp94mnbw1WEOAjB4eRM16X8KfEtuuwL9owl_jK2hYv0Ex0vmODhiRJGV5A/exec';
 module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   if (req.method !== 'POST') { res.setHeader('Allow','POST'); return res.status(405).json({success:false,error:'Use POST to register.'}); }
@@ -6,16 +6,17 @@ module.exports = async function handler(req, res) {
   try { data = typeof req.body === 'string' ? JSON.parse(req.body) : req.body; } catch { return res.status(400).json({success:false,error:'Invalid registration data.'}); }
   const fail = message => res.status(400).json({success:false,error:message});
   if (!data || typeof data !== 'object') return fail('Registration details are required.');
-  for (const [key,max] of [['name',100],['address',220],['city',80],['contact',20]]) {
+  for (const [key,max] of [['name',100],['address',220],['city',80],['contact',20],['email',254]]) {
     if (typeof data[key] !== 'string' || !data[key].trim() || data[key].length > max) return fail('Please check your '+key+'.');
   }
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email.trim()))return fail('Please enter a valid email address.');
   const digits=data.contact.replace(/\D/g,'');
   if(!/^[+0-9()\s-]+$/.test(data.contact)||digits.length<9||digits.length>15)return fail('Please enter a valid phone number.');
   const guests=Number(data.guests);
   if(!Number.isInteger(guests)||guests<0||guests>20)return fail('Choose between 0 and 20 extra guests.');
   if(data.attendance!=='Yes')return fail('Please confirm in-person attendance.');
   if(typeof data.registrationId!=='string'||!/^CAMY-[A-Z0-9-]{8,64}$/.test(data.registrationId))return fail('Invalid registration reference.');
-  const payload={registrationId:data.registrationId,timestamp:new Date().toISOString(),name:data.name.trim(),address:data.address.trim(),city:data.city.trim(),contact:data.contact.trim(),guests:String(guests),totalAttendees:String(guests+1),attendance:'Yes',event:'CAMY Community Event',eventDate:'04 October 2026'};
+  const payload={email:data.email.trim(),registrationId:data.registrationId,timestamp:new Date().toISOString(),name:data.name.trim(),address:data.address.trim(),city:data.city.trim(),contact:data.contact.trim(),guests:String(guests),totalAttendees:String(guests+1),attendance:'Yes',event:'CAMY Community Event',eventDate:'04 October 2026'};
   const controller=new AbortController();const timer=setTimeout(()=>controller.abort(),20000);
   try {
     const upstream=await fetch(process.env.GOOGLE_SCRIPT_URL||DEFAULT_URL,{method:'POST',body:new URLSearchParams(payload),redirect:'follow',signal:controller.signal});

@@ -1,4 +1,4 @@
-﻿const $ = id => document.getElementById(id);
+const $ = id => document.getElementById(id);
 const form = $('form');
 let pending = null;
 const start = new Date('2026-10-04T10:00:00+05:30').getTime();
@@ -46,7 +46,7 @@ form.addEventListener('submit',async event=>{
   if(form.elements.attendance.value!=='Yes'){showError('This is an in-person event. Choose “Yes, I’ll be there” when you can attend.');return;}
   const phone=$('contact').value.trim(); const digits=phone.replace(/\D/g,'');
   if(!/^[+0-9()\s-]+$/.test(phone)||digits.length<9||digits.length>15){showError('Enter a valid phone number with 9–15 digits, for example 077 123 4567.',$('contact'));return;}
-  const details={name:$('name').value.trim(),address:$('address').value.trim(),city:$('city').value.trim(),contact:phone,guests:String($('guests').value),totalAttendees:String(Number($('guests').value)+1),attendance:'Yes',event:'CAMY Community Event',eventDate:'04 October 2026'};
+  const details={email:$('email').value.trim(),name:$('name').value.trim(),address:$('address').value.trim(),city:$('city').value.trim(),contact:phone,guests:String($('guests').value),totalAttendees:String(Number($('guests').value)+1),attendance:'Yes',event:'CAMY Community Event',eventDate:'04 October 2026'};
   const fingerprint=JSON.stringify(details);
   if(!pending||pending.fingerprint!==fingerprint)pending={fingerprint,id:'CAMY-'+crypto.randomUUID().toUpperCase()};
   const payload={...details,registrationId:pending.id,timestamp:new Date().toISOString()};
