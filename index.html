@@ -3,129 +3,248 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0808">
+<meta name="theme-color" content="#f6f1ed">
 <title>CAMY Community Event 2026</title>
 <meta name="description" content="Register for the CAMY Community Event on 04 October 2026 at Supun Arcade, Wellawatta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#090707;--panel:#151010;--panel2:#1a1212;--red:#c7272e;--red2:#8f1117;
-  --text:#f7f3f1;--muted:#a89e9a;--line:rgba(255,255,255,.085);--soft:rgba(199,39,46,.14);
+  --wine:#8e1b22;
+  --wine-2:#b42d34;
+  --rose:#e8c7c9;
+  --ink:#241d1d;
+  --muted:#746b68;
+  --paper:#f7f2ee;
+  --paper-2:#fffdfa;
+  --line:#e9ddd8;
+  --shadow:0 22px 70px rgba(87,45,39,.12);
 }
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
-  margin:0;min-height:100vh;color:var(--text);font-family:Inter,system-ui,sans-serif;overflow-x:hidden;
+  margin:0;
+  color:var(--ink);
+  font-family:"DM Sans",system-ui,sans-serif;
   background:
-    radial-gradient(circle at 8% 14%,rgba(142,17,23,.22),transparent 28%),
-    radial-gradient(circle at 92% 82%,rgba(115,13,18,.14),transparent 30%),
-    linear-gradient(180deg,#0b0808 0%,#090707 100%);
+    radial-gradient(circle at 10% 0%,rgba(180,45,52,.08),transparent 30%),
+    radial-gradient(circle at 94% 28%,rgba(142,27,34,.06),transparent 24%),
+    var(--paper);
+  overflow-x:hidden;
 }
 body:before{
-  content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;
-  background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-  background-size:56px 56px;mask-image:linear-gradient(to bottom,#000,transparent 88%);
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.45;
+  background:
+    linear-gradient(rgba(142,27,34,.024) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(142,27,34,.024) 1px,transparent 1px);
+  background-size:56px 56px;
+  mask-image:linear-gradient(to bottom,#000,transparent 84%);
 }
-#fx{position:fixed;inset:0;pointer-events:none;z-index:0}
-.wrap{width:min(1180px,calc(100% - 34px));margin:auto;position:relative;z-index:2}
-nav{display:flex;align-items:center;justify-content:space-between;padding:24px 0 18px}
+.shell{width:min(1180px,calc(100% - 32px));margin:auto;position:relative;z-index:1}
+nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:22px 0 14px;
+}
 .brand{display:flex;align-items:center;gap:12px}
-.brand img{width:58px;height:58px;object-fit:contain;background:#fff;border-radius:17px;padding:6px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.brand img{
+  width:58px;height:58px;object-fit:contain;background:white;
+  border:1px solid var(--line);border-radius:18px;padding:6px;
+  box-shadow:0 10px 30px rgba(71,38,35,.08)
+}
 .brand strong{display:block;font:800 17px Manrope;letter-spacing:-.02em}
-.brand span{display:block;color:#897f7c;font-size:12px;margin-top:2px}
-.free{font-size:10px;letter-spacing:.12em;font-weight:800;color:#e2b9bb;border:1px solid rgba(199,39,46,.26);background:rgba(29,19,19,.72);padding:9px 12px;border-radius:999px}
-.hero{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(420px,.94fr);gap:70px;align-items:start;padding:66px 0 72px}
-.copy{padding-top:30px}
-.kicker{display:inline-flex;align-items:center;gap:9px;color:#d89195;font-size:11px;letter-spacing:.13em;font-weight:800;text-transform:uppercase}
-.kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(199,39,46,.09)}
-h1{font:800 clamp(54px,6.5vw,92px)/.95 Manrope;letter-spacing:-.065em;margin:20px 0 24px;max-width:760px}
-h1 em{font-style:normal;color:#d93b42}
-.lead{max-width:610px;color:#b2a8a4;line-height:1.75;font-size:16px;margin:0}
-.alert{
-  margin:30px 0 0;max-width:650px;padding:17px 18px;border-left:3px solid #b9232a;
-  background:rgba(22,15,15,.62);border-radius:0 14px 14px 0;color:#bdb3af;font-size:12.5px;line-height:1.7
+.brand span{display:block;font-size:12px;color:#8b817d;margin-top:2px}
+.badge{
+  padding:9px 12px;border-radius:999px;
+  border:1px solid #e5cdcf;background:rgba(255,255,255,.72);
+  color:var(--wine);font-size:10px;font-weight:800;letter-spacing:.1em
 }
-.alert strong{color:#f4eeee}
-.eventline{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:26px;color:#cfc5c1;font-size:13px}
-.eventline span{display:inline-flex;align-items:center;gap:7px}
-.count-title{margin-top:30px;color:#736966;font-size:10px;font-weight:800;letter-spacing:.15em}
-.countdown{display:flex;gap:10px;margin-top:10px}
-.unit{min-width:76px;padding:11px 10px;border-top:1px solid rgba(255,255,255,.10);background:rgba(20,14,14,.55)}
-.unit b{display:block;font:700 24px Manrope;letter-spacing:-.04em}
-.unit small{font-size:9px;color:#766b68;letter-spacing:.08em}
+.hero{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:64px;
+  align-items:center;padding:52px 0 74px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;color:var(--wine);
+  font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase
+}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--wine);box-shadow:0 0 0 6px rgba(142,27,34,.07)}
+h1{
+  font:800 clamp(48px,5.7vw,78px)/1.01 Manrope;
+  letter-spacing:-.06em;margin:20px 0 22px;max-width:720px
+}
+h1 span{color:var(--wine)}
+.lead{
+  max-width:620px;font-size:16px;line-height:1.78;color:#6f6663;margin:0
+}
+.notice{
+  margin-top:28px;max-width:660px;padding:16px 18px;
+  border-radius:16px;background:rgba(255,255,255,.7);border:1px solid var(--line);
+  color:#6d6461;font-size:12.5px;line-height:1.72;
+  box-shadow:0 10px 28px rgba(80,50,45,.04)
+}
+.notice strong{color:#342c2a}
+.event-info{
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;
+  max-width:650px;margin-top:22px
+}
+.info{
+  padding:15px 16px;border-radius:15px;background:rgba(255,255,255,.68);
+  border:1px solid var(--line)
+}
+.info b{display:block;font:700 13px Manrope}
+.info span{display:block;color:#8d817d;font-size:11px;margin-top:3px}
+.count-title{
+  margin-top:26px;font-size:10px;font-weight:800;letter-spacing:.13em;color:#948783
+}
+.countdown{display:flex;gap:10px;margin-top:9px}
+.unit{
+  min-width:76px;padding:10px 10px 11px;border-radius:14px;
+  background:#fff;border:1px solid var(--line);text-align:center;
+  box-shadow:0 10px 25px rgba(74,42,37,.04)
+}
+.unit b{display:block;font:800 23px Manrope;letter-spacing:-.04em}
+.unit small{font-size:9px;color:#9b8d89;font-weight:800;letter-spacing:.09em}
+
 .form-card{
-  position:sticky;top:18px;padding:30px;border:1px solid rgba(255,255,255,.08);border-radius:26px;
-  background:linear-gradient(160deg,rgba(28,20,20,.94),rgba(14,10,10,.95));
-  box-shadow:0 34px 95px rgba(0,0,0,.42),0 0 45px rgba(120,16,22,.06);backdrop-filter:blur(16px)
+  background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.9);
+  border-radius:28px;padding:28px;box-shadow:var(--shadow);backdrop-filter:blur(16px);
+  position:relative;overflow:hidden
 }
-.form-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:24px}
-.form-head h2{font:800 25px Manrope;letter-spacing:-.04em;margin:0}
-.form-head p{font-size:12px;color:#827875;margin:7px 0 0}
-.step{font-size:9px;font-weight:800;letter-spacing:.1em;color:#c79fa1;border:1px solid rgba(199,39,46,.2);padding:7px 9px;border-radius:999px}
-.field{margin-bottom:15px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-label{display:block;font-size:10px;font-weight:800;letter-spacing:.05em;color:#9e9390;margin:0 0 7px}
+.form-card:before{
+  content:"";position:absolute;width:220px;height:220px;border-radius:50%;
+  right:-100px;top:-120px;background:rgba(142,27,34,.06);filter:blur(16px)
+}
+.form-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:22px;position:relative}
+.form-head h2{font:800 24px Manrope;letter-spacing:-.04em;margin:0}
+.form-head p{margin:6px 0 0;font-size:12px;color:#8c807c}
+.step{
+  padding:7px 9px;border-radius:999px;background:#f7ecec;border:1px solid #eed5d6;
+  color:var(--wine);font-size:9px;font-weight:800;letter-spacing:.08em
+}
+.field{margin-bottom:14px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:10px;color:#756b67;font-weight:800;letter-spacing:.04em;margin-bottom:7px}
 input,textarea{
-  width:100%;border:1px solid rgba(255,255,255,.08);background:#100c0c;color:#f5f0ed;border-radius:13px;
-  padding:14px 14px;font:inherit;outline:none;transition:.18s ease
+  width:100%;border:1px solid #e5d9d5;background:#fff;color:#211b1a;
+  border-radius:13px;padding:14px 14px;font:inherit;outline:none;transition:.18s;
+  box-shadow:inset 0 1px rgba(255,255,255,.8)
 }
-textarea{min-height:82px;resize:vertical}
-input:focus,textarea:focus{border-color:rgba(205,49,56,.5);box-shadow:0 0 0 3px rgba(199,39,46,.08)}
-input::placeholder,textarea::placeholder{color:#625956}
+textarea{min-height:86px;resize:vertical}
+input:focus,textarea:focus{border-color:#c78387;box-shadow:0 0 0 4px rgba(142,27,34,.065)}
+input::placeholder,textarea::placeholder{color:#b6aaa6}
 .counter{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}
-.counter button{border:1px solid rgba(199,39,46,.18);background:#1b1212;color:#e4c7c8;border-radius:12px;font-size:21px;cursor:pointer}
-.counter input{text-align:center;font-weight:700}
-.attend{margin:2px 0 16px;padding:14px;border-radius:14px;background:rgba(31,19,19,.72);border:1px solid rgba(199,39,46,.16)}
-.attend-title{font-size:10px;color:#918683;font-weight:800;margin-bottom:10px}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice{position:relative}.choice input{position:absolute;opacity:0}
-.choice span{display:flex;min-height:44px;align-items:center;justify-content:center;text-align:center;border-radius:11px;border:1px solid rgba(255,255,255,.08);background:#120d0d;color:#aaa09c;font-size:11px;font-weight:700;cursor:pointer;transition:.18s}
-.choice input:checked+span{background:linear-gradient(135deg,#8f1117,#c1272e);border-color:transparent;color:#fff;box-shadow:0 10px 24px rgba(130,17,23,.2)}
-.submit,.download{
-  width:100%;min-height:52px;border:0;border-radius:13px;font:800 13px Manrope;cursor:pointer;transition:.2s;
+.counter button{
+  border:1px solid #e5d9d5;background:#faf5f3;color:var(--wine);
+  border-radius:12px;font-size:21px;cursor:pointer
 }
-.submit{background:linear-gradient(135deg,#8d1117,#c52931);color:white;box-shadow:0 16px 32px rgba(143,17,23,.24)}
-.submit:hover,.download:hover{transform:translateY(-2px);filter:brightness(1.05)}
-.note{text-align:center;color:#6f6562;font-size:9.5px;margin-top:10px}
-.success{display:none;text-align:center;padding:8px 0}
-.successMark{width:64px;height:64px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;background:#241516;color:#e25258;font-size:28px}
-.success h2{font:800 28px Manrope;margin:0 0 8px}.success p{color:#a69b97;font-size:13px;line-height:1.65}
-.summary{margin:22px 0;padding:17px;text-align:left;border-radius:14px;background:#110d0d;border:1px solid var(--line)}
-.summary strong{display:block;margin-bottom:7px}.summary span{display:block;color:#9a8f8b;font-size:12px;line-height:1.7}
-.download{display:block;text-decoration:none;background:#eee8e5;color:#171111;line-height:52px}
-.again{border:0;background:none;color:#827774;margin-top:12px;text-decoration:underline;cursor:pointer}
-footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0 34px;color:#675e5b;font-size:10.5px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);opacity:0;z-index:10;background:#1d1515;border:1px solid var(--line);color:#fff;padding:11px 14px;border-radius:11px;font-size:12px;transition:.22s;pointer-events:none}.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(14px);animation:rise .65s ease forwards}.delay{animation-delay:.1s}@keyframes rise{to{opacity:1;transform:none}}
-@media(max-width:900px){.hero{grid-template-columns:1fr;gap:40px;padding-top:30px}.copy{text-align:center;padding-top:0}.lead,.alert{margin-left:auto;margin-right:auto}.alert{text-align:left}.eventline,.countdown{justify-content:center}.form-card{position:relative;top:auto;max-width:650px;margin:auto}}
-@media(max-width:560px){.wrap{width:min(100% - 22px,1180px)}nav{padding-top:14px}.brand img{width:50px;height:50px;border-radius:15px}.brand strong{font-size:15px}.brand span{display:none}.free{font-size:8px;padding:8px 9px}h1{font-size:49px}.hero{padding-top:20px}.row,.choices{grid-template-columns:1fr}.form-card{padding:20px;border-radius:21px}.countdown{gap:6px}.unit{min-width:0;flex:1;padding:10px 5px}.unit b{font-size:20px}}
+.counter input{text-align:center;font-weight:700}
+.attend{
+  margin:2px 0 15px;padding:14px;border-radius:14px;
+  background:#fbf6f4;border:1px solid #eadfdb
+}
+.attend-title{font-size:10px;color:#817571;font-weight:800;margin-bottom:9px}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.choice{position:relative}.choice input{position:absolute;opacity:0}
+.choice span{
+  display:flex;min-height:44px;align-items:center;justify-content:center;
+  border:1px solid #e5d9d5;border-radius:11px;background:white;color:#746a66;
+  font-size:11px;font-weight:700;cursor:pointer;transition:.18s
+}
+.choice input:checked+span{
+  background:linear-gradient(135deg,#8d1a21,#b92f36);
+  color:#fff;border-color:transparent;box-shadow:0 10px 24px rgba(142,27,34,.18)
+}
+.submit,.download{
+  width:100%;min-height:52px;border:0;border-radius:13px;
+  font:800 13px Manrope;cursor:pointer;transition:.18s
+}
+.submit{
+  color:white;background:linear-gradient(135deg,#8b1a21,#b72f36);
+  box-shadow:0 14px 30px rgba(142,27,34,.20)
+}
+.submit:hover,.download:hover{transform:translateY(-2px);filter:brightness(1.02)}
+.note{text-align:center;color:#9a8f8b;font-size:9.5px;margin-top:10px}
+.success{display:none;text-align:center;padding:6px 0}
+.successMark{
+  width:62px;height:62px;margin:0 auto 15px;border-radius:50%;
+  display:grid;place-items:center;background:#f6e7e7;color:var(--wine);font-size:27px
+}
+.success h2{font:800 27px Manrope;margin:0 0 8px}
+.success p{font-size:13px;line-height:1.6;color:#817571}
+.summary{
+  margin:20px 0;padding:16px;border:1px solid var(--line);
+  border-radius:14px;background:#fffaf7;text-align:left
+}
+.summary strong{display:block;margin-bottom:7px}
+.summary span{display:block;font-size:12px;color:#8b7f7b;line-height:1.7}
+.download{display:block;text-decoration:none;line-height:52px;background:#221b1a;color:#fff}
+.again{border:0;background:none;color:#8b7f7b;text-decoration:underline;margin-top:11px;cursor:pointer}
+
+.bottom{
+  padding:4px 0 70px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px
+}
+.perk{
+  padding:18px;border-top:1px solid #d7c9c4;
+  color:#6f6561;background:transparent
+}
+.perk b{display:block;color:#302725;font:700 14px Manrope;margin-bottom:6px}
+.perk span{font-size:12px;line-height:1.55}
+footer{
+  border-top:1px solid #ded2cd;padding:24px 0 34px;
+  color:#928681;font-size:10.5px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap
+}
+.toast{
+  position:fixed;left:50%;bottom:22px;transform:translate(-50%,16px);opacity:0;z-index:20;
+  background:#251d1b;color:#fff;padding:11px 14px;border-radius:11px;font-size:12px;transition:.22s;pointer-events:none
+}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.reveal{opacity:0;transform:translateY(14px);animation:rise .6s ease forwards}.delay{animation-delay:.08s}
+@keyframes rise{to{opacity:1;transform:none}}
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:30px}
+  .copy{text-align:center}.lead,.notice{margin-left:auto;margin-right:auto}.notice{text-align:left}
+  .event-info{margin-left:auto;margin-right:auto}.countdown{justify-content:center}.form-card{max-width:650px;margin:auto}
+  .bottom{grid-template-columns:1fr}
+}
+@media(max-width:560px){
+  .shell{width:min(100% - 22px,1180px)}
+  nav{padding-top:14px}.brand img{width:50px;height:50px;border-radius:15px}.brand strong{font-size:15px}.brand span{display:none}.badge{font-size:8px;padding:8px 9px}
+  h1{font-size:47px}.hero{padding-top:20px}.event-info,.row,.choices{grid-template-columns:1fr}.form-card{padding:20px;border-radius:22px}
+  .countdown{gap:6px}.unit{min-width:0;flex:1;padding:10px 5px}.unit b{font-size:20px}
+}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<canvas id="fx"></canvas>
-<div class="wrap">
+<div class="shell">
 <nav class="reveal">
-  <div class="brand"><img src="./Screenshot%202026-09-18%20092439.png" alt="CAMY logo"><div><strong>CAMY Community</strong><span>Community Event 2026</span></div></div>
-  <div class="free">100% FREE EVENT</div>
+  <div class="brand">
+    <img src="./Screenshot%202026-09-18%20092439.png" alt="CAMY logo">
+    <div><strong>CAMY Community</strong><span>Community Event 2026</span></div>
+  </div>
+  <div class="badge">100% FREE EVENT</div>
 </nav>
 
 <main class="hero">
   <section class="copy reveal">
-    <div class="kicker">CAMY COMMUNITY · OCTOBER 2026</div>
-    <h1>Come for the <em>people.</em><br>Leave with more.</h1>
-    <p class="lead">A simple in-person CAMY gathering for conversations, connections and opportunities — with free entry, lunch and a welcome drink.</p>
+    <div class="eyebrow"><i></i>CAMY COMMUNITY · OCTOBER 2026</div>
+    <h1>Join the room.<br><span>Meet the right people.</span></h1>
+    <p class="lead">An in-person CAMY Community event built around meaningful conversations, useful connections and new opportunities.</p>
 
-    <div class="alert">
+    <div class="notice">
       <strong>This registration is ONLY for people who are physically attending the event.</strong><br>
       මෙම ලියාපදිංචිය උත්සවයට <strong>භෞතිකව සහභාගී වන පුද්ගලයින් සඳහා පමණි.</strong><br>
       இந்த பதிவு நிகழ்வில் <strong>நேரடியாக கலந்துகொள்ளும் நபர்களுக்கு மட்டுமே.</strong>
     </div>
 
-    <div class="eventline">
-      <span>📅 04 October 2026</span>
-      <span>🕙 10:00 AM</span>
-      <span>📍 Supun Arcade, Wellawatta</span>
-      <span>🍽️ Lunch + Welcome Drink FREE</span>
+    <div class="event-info">
+      <div class="info"><b>📅 04 October 2026</b><span>Sunday</span></div>
+      <div class="info"><b>🕙 10:00 AM</b><span>Event start time</span></div>
+      <div class="info"><b>📍 Supun Arcade</b><span>Wellawatta</span></div>
+      <div class="info"><b>🍽️ Lunch + Welcome Drink</b><span>Completely FREE</span></div>
     </div>
 
     <div class="count-title">EVENT STARTS IN</div>
@@ -139,18 +258,25 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0 34px;color:#675
 
   <section class="form-card reveal delay">
     <div id="formView">
-      <div class="form-head"><div><h2>Reserve your place</h2><p>Complete the details below to confirm attendance.</p></div><span class="step">REGISTER</span></div>
+      <div class="form-head">
+        <div><h2>Reserve your place</h2><p>Confirm your attendance in under a minute.</p></div>
+        <span class="step">REGISTER</span>
+      </div>
+
       <form id="form">
         <div class="field"><label>FULL NAME</label><input id="name" required maxlength="100" autocomplete="name" placeholder="Enter your full name"></div>
         <div class="field"><label>ADDRESS</label><textarea id="address" required maxlength="220" autocomplete="street-address" placeholder="Enter your address"></textarea></div>
+
         <div class="row">
           <div class="field"><label>CITY</label><input id="city" required maxlength="80" autocomplete="address-level2" placeholder="e.g. Colombo"></div>
           <div class="field"><label>CONTACT NUMBER</label><input id="contact" type="tel" required maxlength="20" autocomplete="tel" placeholder="07X XXX XXXX"></div>
         </div>
+
         <div class="field">
           <label>PEOPLE COMING WITH YOU</label>
           <div class="counter"><button type="button" onclick="guest(-1)">−</button><input id="guests" value="0" readonly><button type="button" onclick="guest(1)">+</button></div>
         </div>
+
         <div class="attend">
           <div class="attend-title">WILL YOU DEFINITELY ATTEND IN PERSON?</div>
           <div class="choices">
@@ -158,24 +284,39 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:24px 0 34px;color:#675
             <label class="choice"><input type="radio" name="att" value="No"><span>✕ No, I can't attend</span></label>
           </div>
         </div>
+
         <button class="submit" id="submit" type="submit">Confirm Free Registration →</button>
-        <div class="note">No payment required · Your invitation can be downloaded after registration</div>
+        <div class="note">Your invitation card will be available to download after registration.</div>
       </form>
     </div>
 
     <div class="success" id="success">
       <div class="successMark">✓</div>
       <h2>You're registered</h2>
-      <p>Your CAMY place is confirmed.<br>Registration ID: <strong id="regId"></strong></p>
-      <div class="summary"><strong>CAMY Community Event 2026</strong><span>04 October 2026 · 10:00 AM</span><span>Supun Arcade, Wellawatta</span><span>100% FREE · Lunch + Welcome Drink included</span></div>
+      <p>Your place is confirmed.<br>Registration ID: <strong id="regId"></strong></p>
+
+      <div class="summary">
+        <strong>CAMY Community Event 2026</strong>
+        <span>04 October 2026 · 10:00 AM</span>
+        <span>Supun Arcade, Wellawatta</span>
+        <span>100% FREE · Lunch + Welcome Drink included</span>
+      </div>
+
       <a class="download" id="download" download="CAMY-Invitation.png">Download Invitation Card ↓</a>
       <button class="again" onclick="location.reload()">Register another person</button>
     </div>
   </section>
 </main>
 
+<section class="bottom">
+  <div class="perk"><b>100% free entry</b><span>No registration fee and no event admission fee.</span></div>
+  <div class="perk"><b>Lunch included</b><span>Lunch is provided free for registered physical attendees.</span></div>
+  <div class="perk"><b>Welcome drink included</b><span>Start the event with a complimentary welcome drink.</span></div>
+</section>
+
 <footer><span>© 2026 CAMY Community</span><span>04 October 2026 · Supun Arcade, Wellawatta</span></footer>
 </div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -191,52 +332,82 @@ tick();setInterval(tick,1000);
 function round(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
 function invitation(person,rid){
   const c=document.createElement("canvas");c.width=1200;c.height=1500;const x=c.getContext("2d");
-  const bg=x.createLinearGradient(0,0,1200,1500);bg.addColorStop(0,"#0a0707");bg.addColorStop(.58,"#160c0d");bg.addColorStop(1,"#080606");x.fillStyle=bg;x.fillRect(0,0,1200,1500);
-  const glow=x.createRadialGradient(950,160,20,950,160,520);glow.addColorStop(0,"rgba(174,28,35,.36)");glow.addColorStop(1,"rgba(174,28,35,0)");x.fillStyle=glow;x.fillRect(0,0,1200,1500);
-  x.strokeStyle="rgba(255,255,255,.12)";x.lineWidth=2;x.strokeRect(62,62,1076,1376);
-  x.strokeStyle="#9e2026";x.lineWidth=4;x.strokeRect(82,82,1036,1336);
-  const logo=document.querySelector(".brand img");x.fillStyle="#fff";round(x,480,120,240,240,34);x.fill();if(logo.complete)x.drawImage(logo,515,155,170,170);
-  x.textAlign="center";x.fillStyle="#d74a50";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,430);
-  x.fillStyle="#fff";x.font="800 82px Arial";x.fillText("YOU'RE INVITED",600,575);
-  x.fillStyle="#a99e9a";x.font="26px Arial";x.fillText("Come for the people. Leave with more.",600,630);
-  x.fillStyle="#b7282f";x.fillRect(480,690,240,5);
-  x.fillStyle="#7d7370";x.font="700 19px Arial";x.fillText("RESERVED FOR",600,775);
-  x.fillStyle="#fff";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,840);
-  x.fillStyle="rgba(255,255,255,.045)";round(x,210,945,780,235,30);x.fill();
-  x.fillStyle="#f4efed";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1020);
-  x.fillStyle="#b9aeaa";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1075);
-  x.fillStyle="#dd484e";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1135);
-  x.fillStyle="#b4aaa6";x.font="22px Arial";x.fillText("Lunch + Welcome Drink Included",600,1175);
-  x.fillStyle="#776d6a";x.font="19px Arial";x.fillText("Registration ID: "+rid,600,1320);
-  x.fillStyle="#8d817e";x.font="17px Arial";x.fillText("Please keep this invitation with you when attending.",600,1370);
+  const bg=x.createLinearGradient(0,0,1200,1500);bg.addColorStop(0,"#f8f2ee");bg.addColorStop(.55,"#fffdf9");bg.addColorStop(1,"#f5ebe6");x.fillStyle=bg;x.fillRect(0,0,1200,1500);
+  x.fillStyle="rgba(142,27,34,.07)";x.beginPath();x.arc(1000,210,330,0,Math.PI*2);x.fill();
+  x.strokeStyle="#d8c8c2";x.lineWidth=2;x.strokeRect(62,62,1076,1376);
+  x.strokeStyle="#8e1b22";x.lineWidth=4;x.strokeRect(82,82,1036,1336);
+
+  const logo=document.querySelector(".brand img");
+  x.fillStyle="#fff";round(x,480,110,240,240,34);x.fill();
+  if(logo.complete)x.drawImage(logo,515,145,170,170);
+
+  x.textAlign="center";
+  x.fillStyle="#8e1b22";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,425);
+  x.fillStyle="#241d1d";x.font="800 78px Arial";x.fillText("OFFICIAL",600,560);x.fillText("INVITATION",600,640);
+  x.fillStyle="#7a706c";x.font="26px Arial";x.fillText("Join the room. Meet the right people.",600,700);
+  x.fillStyle="#8e1b22";x.fillRect(485,755,230,5);
+
+  x.fillStyle="#8f837f";x.font="700 19px Arial";x.fillText("RESERVED FOR",600,840);
+  x.fillStyle="#241d1d";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,905);
+
+  x.fillStyle="#fff";round(x,210,1000,780,220,28);x.fill();
+  x.strokeStyle="#e6d9d4";x.lineWidth=2;round(x,210,1000,780,220,28);x.stroke();
+
+  x.fillStyle="#241d1d";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1070);
+  x.fillStyle="#746a66";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1125);
+  x.fillStyle="#8e1b22";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1185);
+
+  x.fillStyle="#7f7470";x.font="20px Arial";x.fillText("Lunch + Welcome Drink Included",600,1260);
+  x.fillStyle="#998b86";x.font="19px Arial";x.fillText("Registration ID: "+rid,600,1330);
+  x.fillStyle="#9c8f89";x.font="16px Arial";x.fillText("Please keep this invitation with you when attending.",600,1378);
+
   return c.toDataURL("image/png");
 }
 
 form.addEventListener("submit",async e=>{
   e.preventDefault();
+
   const att=document.querySelector('input[name="att"]:checked');
   if(!att)return say("Please confirm attendance.");
   if(att.value!=="Yes")return say("Registration is only for confirmed physical attendees.");
+
   const phone=contact.value.trim();
   if(!/^[0-9+()\-\s]{7,20}$/.test(phone))return say("Enter a valid contact number.");
+
   const rid=makeId(),g=+guests.value||0;
-  const payload={registrationId:rid,timestamp:new Date().toISOString(),name:name.value.trim(),address:address.value.trim(),city:city.value.trim(),contact:phone,guests:String(g),totalAttendees:String(g+1),event:"CAMY Community Event",eventDate:"04 October 2026",attendance:"Yes"};
+  const payload={
+    registrationId:rid,
+    timestamp:new Date().toISOString(),
+    name:name.value.trim(),
+    address:address.value.trim(),
+    city:city.value.trim(),
+    contact:phone,
+    guests:String(g),
+    totalAttendees:String(g+1),
+    event:"CAMY Community Event",
+    eventDate:"04 October 2026",
+    attendance:"Yes"
+  };
+
   submit.disabled=true;submit.textContent="Registering…";
+
   try{
     const r=await fetch(API,{method:"POST",body:new URLSearchParams(payload)});
     if(!r.ok)throw Error("Registration server error.");
+
     const result=await r.json().catch(()=>({success:true}));
     if(result.success===false)throw Error(result.error||"Registration failed.");
-    regId.textContent=rid;download.href=invitation(payload.name,rid);formView.style.display="none";success.style.display="block";
-  }catch(err){say(err.message||"Could not save registration.");submit.disabled=false;submit.textContent="Confirm Free Registration →"}
-});
 
-(function(){
-  const c=fx,x=c.getContext("2d");let w,h,pts=[];
-  function resize(){w=innerWidth;h=innerHeight;c.width=w;c.height=h;pts=Array.from({length:42},()=>({x:Math.random()*w,y:Math.random()*h,r:.6+Math.random()*1.6,v:.08+Math.random()*.18,a:.05+Math.random()*.09}))}
-  function draw(){x.clearRect(0,0,w,h);for(const p of pts){p.y+=p.v;if(p.y>h){p.y=-3;p.x=Math.random()*w}x.fillStyle="rgba(205,50,57,"+p.a+")";x.beginPath();x.arc(p.x,p.y,p.r,0,Math.PI*2);x.fill()}requestAnimationFrame(draw)}
-  addEventListener("resize",resize);resize();draw();
-})();
+    regId.textContent=rid;
+    download.href=invitation(payload.name,rid);
+    formView.style.display="none";
+    success.style.display="block";
+  }catch(err){
+    say(err.message||"Could not save registration.");
+    submit.disabled=false;
+    submit.textContent="Confirm Free Registration →";
+  }
+});
 </script>
 </body>
 </html>
