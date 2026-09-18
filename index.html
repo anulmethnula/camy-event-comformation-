@@ -323,40 +323,106 @@ footer{
 const API="https://script.google.com/macros/s/AKfycbxN-6p1-OVjMp94mnbw1WEOAjB4eRM16X8KfEtuuwL9owl_jK2hYv0Ex0vmODhiRJGV5A/exec";
 const START=new Date("2026-10-04T10:00:00+05:30").getTime();
 
-function guest(n){guests.value=Math.max(0,Math.min(20,(+guests.value||0)+n))}
-function say(t){toast.textContent=t;toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),2600)}
-function makeId(){return"CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,5).toUpperCase()}
-function tick(){let x=Math.max(0,START-Date.now()),D=Math.floor(x/86400000);x%=86400000;let H=Math.floor(x/3600000);x%=3600000;let M=Math.floor(x/60000),S=Math.floor((x%60000)/1000);d.textContent=String(D).padStart(2,"0");h.textContent=String(H).padStart(2,"0");m.textContent=String(M).padStart(2,"0");s.textContent=String(S).padStart(2,"0")}
-tick();setInterval(tick,1000);
+const formEl=document.getElementById("form");
+const nameEl=document.getElementById("name");
+const addressEl=document.getElementById("address");
+const cityEl=document.getElementById("city");
+const contactEl=document.getElementById("contact");
+const guestsEl=document.getElementById("guests");
+const submitEl=document.getElementById("submit");
+const toastEl=document.getElementById("toast");
+const formViewEl=document.getElementById("formView");
+const successEl=document.getElementById("success");
+const regIdEl=document.getElementById("regId");
+const downloadEl=document.getElementById("download");
+const dEl=document.getElementById("d");
+const hEl=document.getElementById("h");
+const mEl=document.getElementById("m");
+const sEl=document.getElementById("s");
 
-function round(ctx,x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
+function guest(n){
+  guestsEl.value=Math.max(0,Math.min(20,(Number(guestsEl.value)||0)+n));
+}
+
+function say(message){
+  toastEl.textContent=message;
+  toastEl.classList.add("show");
+  clearTimeout(window.__camyToastTimer);
+  window.__camyToastTimer=setTimeout(()=>toastEl.classList.remove("show"),3200);
+}
+
+function makeId(){
+  return "CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,5).toUpperCase();
+}
+
+function tick(){
+  let x=Math.max(0,START-Date.now());
+  const D=Math.floor(x/86400000); x%=86400000;
+  const H=Math.floor(x/3600000); x%=3600000;
+  const M=Math.floor(x/60000);
+  const S=Math.floor((x%60000)/1000);
+  dEl.textContent=String(D).padStart(2,"0");
+  hEl.textContent=String(H).padStart(2,"0");
+  mEl.textContent=String(M).padStart(2,"0");
+  sEl.textContent=String(S).padStart(2,"0");
+}
+tick();
+setInterval(tick,1000);
+
+function round(ctx,x,y,w,h,r){
+  ctx.beginPath();
+  if(ctx.roundRect) ctx.roundRect(x,y,w,h,r);
+  else ctx.rect(x,y,w,h);
+}
+
 function invitation(person,rid){
-  const c=document.createElement("canvas");c.width=1200;c.height=1500;const x=c.getContext("2d");
-  const bg=x.createLinearGradient(0,0,1200,1500);bg.addColorStop(0,"#090707");bg.addColorStop(.55,"#150d0e");bg.addColorStop(1,"#080606");x.fillStyle=bg;x.fillRect(0,0,1200,1500);
-  x.fillStyle="rgba(199,43,51,.12)";x.beginPath();x.arc(1000,210,330,0,Math.PI*2);x.fill();
-  x.strokeStyle="rgba(255,255,255,.14)";x.lineWidth=2;x.strokeRect(62,62,1076,1376);
-  x.strokeStyle="#a62229";x.lineWidth=4;x.strokeRect(82,82,1036,1336);
+  const c=document.createElement("canvas");
+  c.width=1200;c.height=1500;
+  const x=c.getContext("2d");
+
+  const bg=x.createLinearGradient(0,0,1200,1500);
+  bg.addColorStop(0,"#090707");
+  bg.addColorStop(.55,"#150d0e");
+  bg.addColorStop(1,"#080606");
+  x.fillStyle=bg;
+  x.fillRect(0,0,1200,1500);
+
+  x.fillStyle="rgba(199,43,51,.12)";
+  x.beginPath();
+  x.arc(1000,210,330,0,Math.PI*2);
+  x.fill();
+
+  x.strokeStyle="rgba(255,255,255,.14)";
+  x.lineWidth=2;
+  x.strokeRect(62,62,1076,1376);
+  x.strokeStyle="#a62229";
+  x.lineWidth=4;
+  x.strokeRect(82,82,1036,1336);
 
   const logo=document.querySelector(".brand img");
-  x.fillStyle="#fff";round(x,480,110,240,240,34);x.fill();
-  if(logo.complete)x.drawImage(logo,515,145,170,170);
+  x.fillStyle="#fff";
+  round(x,480,110,240,240,34);
+  x.fill();
+  if(logo && logo.complete && logo.naturalWidth>0){
+    x.drawImage(logo,515,145,170,170);
+  }
 
   x.textAlign="center";
   x.fillStyle="#df5359";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,425);
-  x.fillStyle="#ffffff";x.font="800 78px Arial";x.fillText("OFFICIAL",600,560);x.fillText("INVITATION",600,640);
+  x.fillStyle="#fff";x.font="800 78px Arial";x.fillText("OFFICIAL",600,560);x.fillText("INVITATION",600,640);
   x.fillStyle="#b7aaa6";x.font="26px Arial";x.fillText("Join the room. Meet the right people.",600,700);
   x.fillStyle="#b7282f";x.fillRect(485,755,230,5);
-
   x.fillStyle="#807572";x.font="700 19px Arial";x.fillText("RESERVED FOR",600,840);
-  x.fillStyle="#ffffff";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,905);
+  x.fillStyle="#fff";x.font="700 42px Arial";x.fillText(person.toUpperCase().slice(0,30),600,905);
 
-  x.fillStyle="rgba(255,255,255,.045)";round(x,210,1000,780,220,28);x.fill();
-  x.strokeStyle="rgba(255,255,255,.09)";x.lineWidth=2;round(x,210,1000,780,220,28);x.stroke();
+  x.fillStyle="rgba(255,255,255,.045)";
+  round(x,210,1000,780,220,28);x.fill();
+  x.strokeStyle="rgba(255,255,255,.09)";
+  x.lineWidth=2;round(x,210,1000,780,220,28);x.stroke();
 
-  x.fillStyle="#ffffff";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1070);
+  x.fillStyle="#fff";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1070);
   x.fillStyle="#b8adaa";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1125);
   x.fillStyle="#e04a50";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1185);
-
   x.fillStyle="#aaa09c";x.font="20px Arial";x.fillText("Lunch + Welcome Drink Included",600,1260);
   x.fillStyle="#7f7572";x.font="19px Arial";x.fillText("Registration ID: "+rid,600,1330);
   x.fillStyle="#887d79";x.font="16px Arial";x.fillText("Please keep this invitation with you when attending.",600,1378);
@@ -364,23 +430,37 @@ function invitation(person,rid){
   return c.toDataURL("image/png");
 }
 
-form.addEventListener("submit",async e=>{
+formEl.addEventListener("submit",async (e)=>{
   e.preventDefault();
 
+  if(!formEl.reportValidity()) return;
+
   const att=document.querySelector('input[name="att"]:checked');
-  if(!att)return say("Please confirm attendance.");
-  if(att.value!=="Yes")return say("Registration is only for confirmed physical attendees.");
+  if(!att){
+    say("Please confirm that you will attend in person.");
+    return;
+  }
+  if(att.value!=="Yes"){
+    say("Registration is only for confirmed physical attendees.");
+    return;
+  }
 
-  const phone=contact.value.trim();
-  if(!/^[0-9+()\-\s]{7,20}$/.test(phone))return say("Enter a valid contact number.");
+  const phone=contactEl.value.trim();
+  if(!/^[0-9+()\-\s]{7,20}$/.test(phone)){
+    say("Please enter a valid contact number.");
+    contactEl.focus();
+    return;
+  }
 
-  const rid=makeId(),g=+guests.value||0;
+  const rid=makeId();
+  const g=Number(guestsEl.value)||0;
+
   const payload={
     registrationId:rid,
     timestamp:new Date().toISOString(),
-    name:name.value.trim(),
-    address:address.value.trim(),
-    city:city.value.trim(),
+    name:nameEl.value.trim(),
+    address:addressEl.value.trim(),
+    city:cityEl.value.trim(),
     contact:phone,
     guests:String(g),
     totalAttendees:String(g+1),
@@ -389,23 +469,37 @@ form.addEventListener("submit",async e=>{
     attendance:"Yes"
   };
 
-  submit.disabled=true;submit.textContent="Registering…";
+  submitEl.disabled=true;
+  submitEl.textContent="Registering…";
 
   try{
-    const r=await fetch(API,{method:"POST",body:new URLSearchParams(payload)});
-    if(!r.ok)throw Error("Registration server error.");
+    const response=await fetch(API,{
+      method:"POST",
+      body:new URLSearchParams(payload)
+    });
 
-    const result=await r.json().catch(()=>({success:true}));
-    if(result.success===false)throw Error(result.error||"Registration failed.");
+    if(!response.ok){
+      throw new Error("Registration server error.");
+    }
 
-    regId.textContent=rid;
-    download.href=invitation(payload.name,rid);
-    formView.style.display="none";
-    success.style.display="block";
+    const text=await response.text();
+    let result={success:true};
+    try{ result=JSON.parse(text); }catch(_){}
+
+    if(result.success===false){
+      throw new Error(result.error||"Registration failed.");
+    }
+
+    regIdEl.textContent=rid;
+    downloadEl.href=invitation(payload.name,rid);
+    formViewEl.style.display="none";
+    successEl.style.display="block";
+    successEl.scrollIntoView({behavior:"smooth",block:"center"});
   }catch(err){
-    say(err.message||"Could not save registration.");
-    submit.disabled=false;
-    submit.textContent="Confirm Free Registration →";
+    console.error(err);
+    say(err.message||"Could not save registration. Please try again.");
+    submitEl.disabled=false;
+    submitEl.textContent="Confirm Free Registration →";
   }
 });
 </script>
