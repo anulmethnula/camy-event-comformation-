@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#f6f2f0">
+<meta name="theme-color" content="#f7f3f1">
 <title>CAMY Event 2026</title>
 <meta name="description" content="CAMY Community Event — 04 October 2026, 10:00 AM, Supun Arcade, Wellawatta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,14 +12,15 @@
 <style>
 :root{
   --red:#d71928;
-  --red2:#a70e19;
+  --red-dark:#8d0b14;
   --ink:#211d1e;
-  --muted:#776e6b;
-  --line:#e8ddda;
+  --muted:#766d6a;
+  --line:#e7dcda;
   --soft:#fff3f1;
   --bg:#f7f3f1;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
   background:var(--bg);
@@ -28,12 +29,7 @@ body{
 }
 button,input,textarea{font:inherit}
 .shell{width:min(1080px,calc(100% - 28px));margin:auto}
-nav{
-  height:78px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:10px}
 .logo{
   width:46px;height:46px;border-radius:13px;background:#fff;
@@ -51,18 +47,20 @@ nav{
   grid-template-columns:.9fr 1.1fr;
   gap:20px;
   align-items:stretch;
-  padding:8px 0 28px;
+  padding:8px 0 26px
 }
 .info{
-  background:linear-gradient(145deg,#520006,#980c15 55%,#d21b28);
+  min-height:600px;
+  padding:30px;
   border-radius:26px;
   color:#fff;
-  padding:32px;
-  min-height:610px;
   display:flex;
   flex-direction:column;
   justify-content:space-between;
-  box-shadow:0 24px 60px rgba(85,10,16,.18);
+  background:
+    radial-gradient(circle at 88% 20%,rgba(255,76,76,.35),transparent 30%),
+    linear-gradient(145deg,#4d0005,#920b14 58%,#d21a27);
+  box-shadow:0 24px 60px rgba(85,10,16,.17)
 }
 .eyebrow{font-size:10px;font-weight:800;letter-spacing:.1em;opacity:.75}
 h1{
@@ -71,22 +69,22 @@ h1{
   line-height:.96;
   letter-spacing:-.055em
 }
-.sub{margin:0;color:rgba(255,255,255,.82);font-size:14px;line-height:1.6}
+.sub{margin:0;color:rgba(255,255,255,.84);font-size:14px;line-height:1.6}
 .notice{
-  margin-top:20px;background:#fff;color:#4a171b;
-  border-radius:15px;padding:14px 15px;
-  font-size:12px;line-height:1.55
-}
-.notice b{display:block;margin-bottom:4px}
-.event{
   margin-top:20px;
-  display:grid;
-  gap:8px;
+  background:#fff;
+  color:#49171a;
+  border-radius:15px;
+  padding:14px 15px;
+  font-size:12px;
+  line-height:1.6
 }
+.notice strong{display:block;margin-bottom:5px;font-size:12.5px}
+.notice div{margin-top:2px}
+.event{margin-top:20px;display:grid;gap:8px}
 .eventItem{
   display:flex;align-items:center;gap:10px;
-  padding:11px 12px;
-  border-radius:12px;
+  padding:11px 12px;border-radius:12px;
   background:rgba(255,255,255,.10);
   border:1px solid rgba(255,255,255,.13);
   font-size:12px
@@ -99,14 +97,11 @@ h1{
   border:1px solid var(--line);
   border-radius:26px;
   padding:26px;
-  box-shadow:0 22px 55px rgba(55,30,25,.08);
+  box-shadow:0 22px 55px rgba(55,30,25,.08)
 }
-.head{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  gap:12px;margin-bottom:17px
-}
+.head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:17px}
 .head h2{font-size:25px;margin:0;letter-spacing:-.035em}
-.head p{font-size:11px;line-height:1.5;color:var(--muted);margin:6px 0 0}
+.head p{font-size:11px;line-height:1.55;color:var(--muted);margin:6px 0 0}
 .tag{font-size:8px;font-weight:900;color:#b21620;background:var(--soft);padding:7px 9px;border-radius:999px}
 .field{margin-bottom:11px}
 .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
@@ -133,64 +128,69 @@ input:focus,textarea:focus{
   border:1px solid #ead6d1;background:#fff2ef;color:#ac1821;
   border-radius:10px;font-size:20px;cursor:pointer
 }
-.counter button:disabled{opacity:.35}
+.counter button:disabled{opacity:.35;cursor:default}
 .counter input{text-align:center;font-weight:800;background:#fff}
 .attend{
   background:#fff7f5;border:1px solid #eddcd7;
   border-radius:12px;padding:11px;margin:1px 0 12px
 }
-.attendTitle{font-size:11px;font-weight:800;line-height:1.45;margin-bottom:8px}
+.attendTitle{font-size:11px;font-weight:800;line-height:1.5;margin-bottom:8px}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:7px}
 .choice{position:relative;margin:0}
 .choice input{position:absolute;opacity:0;pointer-events:none}
 .choice span{
-  min-height:44px;display:flex;align-items:center;justify-content:center;
-  text-align:center;padding:6px;border:1px solid #e3d7d3;border-radius:9px;
-  background:#fff;color:#625957;font-size:10.5px;font-weight:700;line-height:1.4;cursor:pointer
+  min-height:44px;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  padding:6px;border:1px solid #e3d7d3;border-radius:9px;
+  background:#fff;color:#625957;font-size:10.5px;font-weight:700;line-height:1.45;cursor:pointer
 }
 .choice input:checked+span{background:#ffe9e6;border-color:#e35a63;color:#9b1720}
+.choice input:focus-visible+span{outline:3px solid rgba(215,25,40,.18);outline-offset:2px}
 .submit{
   width:100%;min-height:48px;border:0;border-radius:10px;
   background:linear-gradient(135deg,#ac101a,#e52c37);
   color:#fff;font-size:12px;font-weight:900;cursor:pointer;
   box-shadow:0 10px 24px rgba(172,16,26,.18)
 }
+.submit:hover{filter:brightness(1.04)}
 .submit:disabled{opacity:.6;cursor:wait}
-.note{text-align:center;color:#8b807c;font-size:9px;line-height:1.45;margin-top:8px}
+.note{text-align:center;color:#8b807c;font-size:9.5px;line-height:1.55;margin-top:8px}
 .error{
   background:#fff0ed;border:1px solid #efc8c1;color:#981d24;
   border-radius:10px;padding:10px;font-size:11px;line-height:1.5;margin-bottom:11px
 }
 .success{text-align:center;padding:4px 0}
 .successIcon{
-  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  width:56px;height:56px;border-radius:50%;
+  display:grid;place-items:center;
   background:#eaf7ee;color:#2d7b4b;font-size:25px;margin:0 auto 12px
 }
 .success h2{font-size:25px;margin:0 0 6px}
-.success p{font-size:12px;line-height:1.55;color:var(--muted)}
+.success p{font-size:12px;line-height:1.6;color:var(--muted)}
 .preview{
-  max-width:250px;margin:14px auto;border-radius:12px;overflow:hidden;
-  border:1px solid var(--line);box-shadow:0 10px 26px rgba(60,20,15,.14)
+  max-width:240px;margin:14px auto;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);box-shadow:0 10px 26px rgba(60,20,15,.14);
+  background:#f7f3f1
 }
 .preview img{width:100%;display:block}
 .download{
   display:block;min-height:48px;line-height:48px;border-radius:10px;
   text-decoration:none;background:#211d1e;color:#fff;font-size:12px;font-weight:800
 }
-.again{border:0;background:none;text-decoration:underline;color:#786c68;margin-top:10px;cursor:pointer;font-size:11px}
+.download:hover{background:#090808}
+.again{
+  border:0;background:none;text-decoration:underline;color:#786c68;
+  margin-top:10px;cursor:pointer;font-size:11px
+}
 footer{
-  padding:0 0 22px;
-  color:#8f827e;
-  font-size:9px;
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  flex-wrap:wrap
+  padding:0 0 22px;color:#8f827e;font-size:9px;
+  display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap
 }
 .toast{
-  position:fixed;left:50%;bottom:20px;transform:translate(-50%,12px);
-  opacity:0;pointer-events:none;background:#221e1f;color:#fff;
-  padding:10px 13px;border-radius:9px;font-size:11px;transition:.2s;z-index:20
+  position:fixed;left:50%;bottom:20px;
+  transform:translate(-50%,12px);opacity:0;pointer-events:none;
+  background:#221e1f;color:#fff;padding:10px 13px;border-radius:9px;
+  font-size:11px;transition:.2s;z-index:20
 }
 .toast.show{opacity:1;transform:translate(-50%,0)}
 [hidden]{display:none!important}
@@ -201,13 +201,22 @@ footer{
 }
 @media(max-width:520px){
   .shell{width:calc(100% - 18px)}
-  nav{height:66px}.logo{width:42px;height:42px}.logo img{width:34px;height:34px}.brand b{font-size:13px}.brand span{display:none}.free{font-size:8px}
+  nav{height:66px}
+  .logo{width:42px;height:42px}
+  .logo img{width:34px;height:34px}
+  .brand b{font-size:13px}
+  .brand span{display:none}
+  .free{font-size:8px}
   .main{padding-top:4px;gap:12px}
   .info,.formCard{border-radius:20px}
-  .info{padding:20px}h1{font-size:46px}.sub{font-size:13px}
-  .event{grid-template-columns:1fr 1fr}.eventItem{padding:9px;font-size:11px}
-  .formCard{padding:18px 14px}.head h2{font-size:22px}
-  .row{grid-template-columns:1fr}.choices{grid-template-columns:1fr}
+  .info{padding:20px}
+  h1{font-size:46px}
+  .sub{font-size:13px}
+  .event{grid-template-columns:1fr 1fr}
+  .eventItem{padding:9px;font-size:11px}
+  .formCard{padding:18px 14px}
+  .head h2{font-size:22px}
+  .row,.choices{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -226,20 +235,20 @@ footer{
       <div>
         <div class="eyebrow">CAMY COMMUNITY · 04 OCTOBER 2026</div>
         <h1>You’re<br>Invited!</h1>
-        <p class="sub">Come and join us for the CAMY event.</p>
+        <p class="sub">Join us for the CAMY event.</p>
 
         <div class="notice">
-          <b>This form is only for people coming to the event.</b>
-          <div>මේ ෆෝම් එක event එකට එන අයට විතරයි.</div>
-          <div>இந்த form நிகழ்ச்சிக்கு வருபவர்களுக்கு மட்டும்.</div>
+          <strong>Please fill this form only if you are coming to the event.</strong>
+          <div>කරුණාකර, උත්සවයට එන අය පමණක් මේ ෆෝම් එක පුරවන්න.</div>
+          <div>தயவுசெய்து, நிகழ்ச்சிக்கு வருபவர்கள் மட்டும் இந்த படிவத்தை நிரப்பவும்.</div>
         </div>
       </div>
 
       <div class="event">
         <div class="eventItem">📅 <div><strong>04 October 2026</strong><span>Sunday</span></div></div>
         <div class="eventItem">🕙 <div><strong>10:00 AM</strong><span>Start time</span></div></div>
-        <div class="eventItem">📍 <div><strong>Supun Arcade</strong><span>Wellawatta</span></div></div>
-        <div class="eventItem">🍛 <div><strong>FREE Lunch</strong><span>Entry is also FREE</span></div></div>
+        <div class="eventItem">📍 <div><strong>Supun Arcade</strong><span>Wellawatta · 56 Galle Road</span></div></div>
+        <div class="eventItem">🍛 <div><strong>FREE Lunch</strong><span>Entry is also 100% FREE</span></div></div>
       </div>
     </section>
 
@@ -247,23 +256,23 @@ footer{
       <div id="formView">
         <div class="head">
           <div>
-            <h2>Add your details</h2>
-            <p>ඔයාගේ විස්තර ටික දාන්න.</p>
+            <h2>Registration</h2>
+            <p>Fill in your details.<br><span class="si">ඔබේ විස්තර ටික පුරවන්න.</span></p>
           </div>
           <span class="tag">FREE</span>
         </div>
 
-        <form id="form">
-          <div id="formError" class="error" hidden></div>
+        <form id="form" novalidate>
+          <div id="formError" class="error" role="alert" hidden></div>
 
           <div class="field">
             <label for="name">NAME <span class="si">/ නම</span></label>
-            <input id="name" required maxlength="100" autocomplete="name" placeholder="Your name / ඔයාගේ නම">
+            <input id="name" required maxlength="100" autocomplete="name" placeholder="Your name / ඔබේ නම">
           </div>
 
           <div class="field">
             <label for="address">ADDRESS <span class="si">/ ලිපිනය</span></label>
-            <textarea id="address" required maxlength="220" autocomplete="street-address" placeholder="Your address / ඔයාගේ ලිපිනය"></textarea>
+            <textarea id="address" required maxlength="220" autocomplete="street-address" placeholder="Your address / ඔබේ ලිපිනය"></textarea>
           </div>
 
           <div class="row">
@@ -272,13 +281,13 @@ footer{
               <input id="city" required maxlength="80" autocomplete="address-level2" placeholder="e.g. Colombo">
             </div>
             <div class="field">
-              <label for="contact">PHONE <span class="si">/ ෆෝන් අංකය</span></label>
-              <input id="contact" type="tel" required maxlength="20" autocomplete="tel" placeholder="07X XXX XXXX">
+              <label for="contact">PHONE NUMBER <span class="si">/ දුරකථන අංකය</span></label>
+              <input id="contact" type="tel" inputmode="tel" required maxlength="20" autocomplete="tel" placeholder="07X XXX XXXX">
             </div>
           </div>
 
           <div class="field">
-            <label>PEOPLE WITH YOU <span class="si">/ ඔයා එක්ක තව කී දෙනෙක් එනවද?</span></label>
+            <label>PEOPLE COMING WITH YOU <span class="si">/ ඔබ එක්ක තව කී දෙනෙක් එනවද?</span></label>
             <div class="counter">
               <button type="button" id="minus" aria-label="Decrease people">−</button>
               <input id="guests" value="0" readonly aria-label="People coming with you">
@@ -287,25 +296,44 @@ footer{
           </div>
 
           <div class="attend">
-            <div class="attendTitle">ARE YOU COMING?<br><span class="si">ඔයා event එකට එනවද?</span></div>
+            <div class="attendTitle">
+              ARE YOU COMING TO THE EVENT?<br>
+              <span class="si">ඔබ උත්සවයට එනවාද?</span>
+            </div>
             <div class="choices">
-              <label class="choice"><input type="radio" name="att" value="Yes" required><span>✓ Yes<br>ඔව්, එනවා</span></label>
-              <label class="choice"><input type="radio" name="att" value="No"><span>✕ No<br>නෑ, එන්න බෑ</span></label>
+              <label class="choice">
+                <input type="radio" name="att" value="Yes" required>
+                <span>✓ Yes, I’m coming<br>ඔව්, මම එනවා</span>
+              </label>
+              <label class="choice">
+                <input type="radio" name="att" value="No">
+                <span>✕ No, I can’t come<br>නැහැ, මට එන්න බැහැ</span>
+              </label>
             </div>
           </div>
 
-          <button class="submit" id="submit" type="submit">Register FREE / නම දාන්න</button>
-          <div class="note">After that, you can download your invitation card.<br>ඊට පස්සේ invitation card එක download කරගන්න පුළුවන්.</div>
+          <button class="submit" id="submit" type="submit">Register FREE / නොමිලේ ලියාපදිංචි වන්න</button>
+          <div class="note">
+            After registration, you can download the invitation card.<br>
+            ලියාපදිංචි වූ පසු ආරාධනා පත බාගත කරගන්න පුළුවන්.
+          </div>
         </form>
       </div>
 
       <div class="success" id="success" hidden>
         <div class="successIcon">✓</div>
-        <h2>Done!</h2>
-        <p>ඔයාගේ නම දාගත්තා ✅<br>Registration ID: <strong id="regId"></strong></p>
-        <div class="preview"><img id="invitePreview" alt="CAMY invitation card"></div>
-        <a class="download" id="download" download="CAMY-Invitation.png">Download Invitation Card ↓</a>
-        <button class="again" id="again" type="button">Add another person</button>
+        <h2>Registration successful!</h2>
+        <p>ඔබේ ලියාපදිංචිය සාර්ථකයි.<br>Registration ID: <strong id="regId"></strong></p>
+
+        <div class="preview">
+          <img id="invitePreview" src="./Invite%20-%20Camy%20Meetup.png" alt="CAMY event invitation card">
+        </div>
+
+        <a class="download" id="download" href="./Invite%20-%20Camy%20Meetup.png" download="CAMY-Invitation.png">
+          Download Invitation Card / ආරාධනා පත බාගන්න ↓
+        </a>
+
+        <button class="again" id="again" type="button">Register another person</button>
       </div>
     </section>
   </main>
@@ -319,180 +347,166 @@ footer{
 <div class="toast" id="toast"></div>
 
 <script>
-const form=document.getElementById("form"),
-nameEl=document.getElementById("name"),
-addressEl=document.getElementById("address"),
-cityEl=document.getElementById("city"),
-contactEl=document.getElementById("contact"),
-guestsEl=document.getElementById("guests"),
-minusEl=document.getElementById("minus"),
-plusEl=document.getElementById("plus"),
-submitEl=document.getElementById("submit"),
-formView=document.getElementById("formView"),
-success=document.getElementById("success"),
-regIdEl=document.getElementById("regId"),
-downloadEl=document.getElementById("download"),
-previewEl=document.getElementById("invitePreview"),
-toast=document.getElementById("toast"),
-formError=document.getElementById("formError");
+const INVITATION_URL="./Invite%20-%20Camy%20Meetup.png";
 
-function setGuests(v){
-  const n=Math.max(0,Math.min(20,v));
+const form=document.getElementById("form");
+const nameEl=document.getElementById("name");
+const addressEl=document.getElementById("address");
+const cityEl=document.getElementById("city");
+const contactEl=document.getElementById("contact");
+const guestsEl=document.getElementById("guests");
+const minusEl=document.getElementById("minus");
+const plusEl=document.getElementById("plus");
+const submitEl=document.getElementById("submit");
+const formView=document.getElementById("formView");
+const success=document.getElementById("success");
+const regIdEl=document.getElementById("regId");
+const downloadEl=document.getElementById("download");
+const previewEl=document.getElementById("invitePreview");
+const toast=document.getElementById("toast");
+const formError=document.getElementById("formError");
+
+let pending=null;
+
+function setGuests(value){
+  const n=Math.max(0,Math.min(20,Number(value)||0));
   guestsEl.value=n;
   minusEl.disabled=n===0;
   plusEl.disabled=n===20;
 }
+
 minusEl.addEventListener("click",()=>setGuests(Number(guestsEl.value)-1));
 plusEl.addEventListener("click",()=>setGuests(Number(guestsEl.value)+1));
 setGuests(0);
 
-function showToast(m){
-  toast.textContent=m;
+function showToast(message){
+  toast.textContent=message;
   toast.classList.add("show");
   clearTimeout(window.camyToast);
   window.camyToast=setTimeout(()=>toast.classList.remove("show"),3000);
 }
-function showError(m){
-  formError.textContent=m;
+
+function showError(message,field){
+  formError.textContent=message;
   formError.hidden=false;
+  if(field)field.focus();
 }
+
 function makeId(){
-  return "CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,5).toUpperCase();
-}
-function rr(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);
-  else ctx.rect(x,y,w,h);
-}
-function invitation(data){
-  const c=document.createElement("canvas");
-  c.width=1080;c.height=1528;
-  const x=c.getContext("2d");
-
-  const bg=x.createLinearGradient(0,0,1080,1528);
-  bg.addColorStop(0,"#300003");
-  bg.addColorStop(.45,"#8b0008");
-  bg.addColorStop(1,"#d01620");
-  x.fillStyle=bg;x.fillRect(0,0,1080,1528);
-
-  const glow=x.createRadialGradient(790,500,30,790,500,650);
-  glow.addColorStop(0,"rgba(255,42,42,.65)");
-  glow.addColorStop(1,"rgba(255,0,0,0)");
-  x.fillStyle=glow;x.fillRect(0,0,1080,1528);
-
-  x.textAlign="center";
-  x.fillStyle="#ff2b32";
-  x.font="900 70px Arial";
-  x.fillText("CAMY",350,175);
-  x.fillStyle="#ffffff";
-  x.font="700 28px Arial";
-  x.fillText("SUPUN GROUP",760,175);
-
-  x.strokeStyle="rgba(255,255,255,.75)";
-  x.lineWidth=2;x.beginPath();x.moveTo(540,95);x.lineTo(540,220);x.stroke();
-
-  x.fillStyle="#ffffff";
-  x.font="400 62px Arial";x.fillText("You're",540,350);
-  x.font="900 100px Arial";x.fillText("INVITED!",540,450);
-
-  x.font="400 27px Arial";
-  x.fillText("CAMY Online Entrepreneurs Program",540,545);
-  x.fillText("Networking & Brand Awareness Event",540,588);
-
-  x.fillStyle="rgba(70,0,4,.68)";
-  rr(x,110,680,860,320,38);x.fill();
-  x.strokeStyle="#e3212d";x.lineWidth=3;rr(x,110,680,860,320,38);x.stroke();
-
-  x.fillStyle="#e21a24";
-  rr(x,285,630,510,100,24);x.fill();
-  x.fillStyle="#fff";x.font="800 40px Arial";x.fillText("WHERE TO FIND US",540,694);
-
-  x.font="400 45px Arial";x.fillText("October",405,790);
-  x.font="900 56px Arial";x.fillText("04",565,790);
-  x.font="400 45px Arial";x.fillText("2026",700,790);
-
-  x.strokeStyle="rgba(255,255,255,.7)";x.lineWidth=2;
-  x.beginPath();x.moveTo(165,825);x.lineTo(915,825);x.stroke();
-  x.beginPath();x.moveTo(370,825);x.lineTo(370,910);x.stroke();
-
-  x.fillStyle="#fff";x.font="900 35px Arial";x.fillText("10:00 AM",270,880);
-  x.font="900 33px Arial";x.fillText("Supun Arcade",575,880);
-  x.font="400 30px Arial";x.fillText("Wellawatta",800,880);
-
-  x.font="700 28px Arial";x.textAlign="left";
-  x.fillText("📍  Supun Arcade Building, 56 Galle Rd, Colombo 04",120,1090);
-  x.fillText("🍽️  Lunch will be provided",120,1150);
-  x.fillText("🎟️  Entrance & Event 100% FREE",120,1210);
-
-  x.fillStyle="rgba(255,255,255,.12)";
-  rr(x,120,1280,840,130,24);x.fill();
-  x.textAlign="center";x.fillStyle="#fff";
-  x.font="700 23px Arial";x.fillText("INVITED PERSON",540,1325);
-  x.font="900 34px Arial";x.fillText(data.name.toUpperCase().slice(0,30),540,1373,800);
-  x.font="400 18px Arial";x.fillText("ID: "+data.registrationId+"   •   People: "+data.totalAttendees,540,1415);
-
-  x.fillStyle="rgba(255,255,255,.8)";
-  x.font="17px Arial";x.fillText("Keep this card with you when you come to the event.",540,1480);
-
-  return c.toDataURL("image/png");
+  if(window.crypto && typeof crypto.randomUUID==="function"){
+    return "CAMY-"+crypto.randomUUID().replaceAll("-","").toUpperCase().slice(0,20);
+  }
+  return "CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,8).toUpperCase();
 }
 
-form.addEventListener("submit",async e=>{
-  e.preventDefault();
+function resetSubmitButton(){
+  submitEl.disabled=false;
+  submitEl.textContent="Register FREE / නොමිලේ ලියාපදිංචි වන්න";
+}
+
+form.addEventListener("submit",async event=>{
+  event.preventDefault();
   formError.hidden=true;
-  if(!form.reportValidity())return;
 
-  const attendance=document.querySelector('input[name="att"]:checked');
-  if(!attendance)return showError("Please choose Yes or No. / ඔව් හෝ නෑ තෝරන්න.");
-  if(attendance.value!=="Yes")return showError("This form is only for people coming to the event. / මේ ෆෝම් එක event එකට එන අයට විතරයි.");
-
-  const phone=contactEl.value.trim();
-  if(!/^[0-9+()\-\s]{7,20}$/.test(phone)){
-    contactEl.focus();
-    return showError("Please enter a correct phone number. / හරි ෆෝන් අංකයක් දාන්න.");
+  if(!form.checkValidity()){
+    form.reportValidity();
+    return;
   }
 
-  const rid=makeId();
+  const name=nameEl.value.trim();
+  const address=addressEl.value.trim();
+  const city=cityEl.value.trim();
+  const phone=contactEl.value.trim();
+  const attendance=document.querySelector('input[name="att"]:checked');
+
+  if(!name)return showError("Please enter your name. / ඔබේ නම දාන්න.",nameEl);
+  if(!address)return showError("Please enter your address. / ඔබේ ලිපිනය දාන්න.",addressEl);
+  if(!city)return showError("Please enter your city. / ඔබේ නගරය දාන්න.",cityEl);
+
+  if(!attendance){
+    return showError("Please choose Yes or No. / ඔව් හෝ නැහැ තෝරන්න.");
+  }
+
+  if(attendance.value!=="Yes"){
+    return showError("This form is only for people coming to the event. / මේ ෆෝම් එක උත්සවයට එන අයට පමණයි.");
+  }
+
+  const digits=phone.replace(/\D/g,"");
+  if(!/^[+0-9()\s-]+$/.test(phone) || digits.length<9 || digits.length>15){
+    return showError("Please enter a correct phone number. / හරි දුරකථන අංකයක් දාන්න.",contactEl);
+  }
+
   const guests=Number(guestsEl.value)||0;
-  const payload={
-    registrationId:rid,
-    name:nameEl.value.trim(),
-    address:addressEl.value.trim(),
-    city:cityEl.value.trim(),
+  const details={
+    name,
+    address,
+    city,
     contact:phone,
     guests:String(guests),
     attendance:"Yes"
   };
 
+  const fingerprint=JSON.stringify(details);
+  if(!pending || pending.fingerprint!==fingerprint){
+    pending={fingerprint,id:makeId()};
+  }
+
+  const payload={...details,registrationId:pending.id};
+
   submitEl.disabled=true;
   submitEl.textContent="Please wait... / පොඩ්ඩක් ඉන්න...";
+
+  const controller=new AbortController();
+  const timeout=setTimeout(()=>controller.abort(),25000);
 
   try{
     const response=await fetch("/api/register",{
       method:"POST",
       headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(payload)
+      body:JSON.stringify(payload),
+      signal:controller.signal
     });
-    const result=await response.json().catch(()=>({success:false,error:"Invalid server response."}));
-    if(!response.ok||result.success!==true)throw new Error(result.error||"Registration failed.");
 
-    const card=invitation({...payload,totalAttendees:String(guests+1)});
-    regIdEl.textContent=rid;
-    downloadEl.href=card;
-    previewEl.src=card;
+    const result=await response.json().catch(()=>({
+      success:false,
+      error:"Invalid server response."
+    }));
+
+    if(
+      !response.ok ||
+      result.success!==true ||
+      (result.registrationId && result.registrationId!==payload.registrationId)
+    ){
+      throw new Error(result.error||"Registration failed.");
+    }
+
+    regIdEl.textContent=payload.registrationId;
+    previewEl.src=INVITATION_URL;
+    downloadEl.href=INVITATION_URL;
+
     formView.hidden=true;
     success.hidden=false;
+    pending=null;
+
+    document.getElementById("registration").scrollIntoView({
+      behavior:"smooth",
+      block:"center"
+    });
   }catch(error){
     console.error(error);
-    showToast(error.message||"Something went wrong. Please try again.");
+    const message=error.name==="AbortError"
+      ? "Please try again. / නැවත උත්සාහ කරන්න."
+      : (error.message||"Something went wrong. Please try again.");
+    showToast(message);
   }finally{
-    submitEl.disabled=false;
-    submitEl.textContent="Register FREE / නම දාන්න";
+    clearTimeout(timeout);
+    resetSubmitButton();
   }
 });
 
 document.getElementById("again").addEventListener("click",()=>{
   form.reset();
+  pending=null;
   setGuests(0);
   success.hidden=true;
   formView.hidden=false;
