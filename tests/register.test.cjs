@@ -67,6 +67,32 @@ test('sends normalized data without email and returns confirmed reference',async
   }
 });
 
+test('falls back for an older sheet script that still requires email',async()=>{
+  const original=global.fetch;
+  let calls=0;
+
+  global.fetch=async(url,options)=>{
+    calls++;
+    if(calls===1){
+      assert.equal(options.body.get('email'),null);
+      return {ok:true,json:async()=>({success:false,error:'Invalid email address.'})};
+    }
+
+    assert.equal(options.body.get('email'),'not-collected@camy.invalid');
+    assert.equal(options.body.get('registrationId'),valid.registrationId);
+    return {ok:true,json:async()=>({success:true,registrationId:valid.registrationId})};
+  };
+
+  try{
+    const result=await run();
+    assert.equal(result.code,200);
+    assert.equal(result.value.registrationId,valid.registrationId);
+    assert.equal(calls,2);
+  }finally{
+    global.fetch=original;
+  }
+});
+
 test('does not confirm failures or mismatched references',async()=>{
   const original=global.fetch;
   try{
