@@ -77,11 +77,12 @@ module.exports = async function handler(req, res) {
 
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), 20000);
+  const endpoint = process.env.GOOGLE_SCRIPT_URL || DEFAULT_URL;
 
-  try {
-    const upstream = await fetch(process.env.GOOGLE_SCRIPT_URL || DEFAULT_URL, {
+  async function sendToSheet(values) {
+    const upstream = await fetch(endpoint, {
       method: 'POST',
-      body: new URLSearchParams(payload),
+      body: new URLSearchParams(values),
       redirect: 'follow',
       signal: controller.signal
     });
@@ -90,15 +91,32 @@ module.exports = async function handler(req, res) {
       throw new Error('Upstream unavailable');
     }
 
-    let result;
     try {
-      result = await upstream.json();
+      return await upstream.json();
     } catch {
       throw new Error('Invalid upstream response');
     }
+  }
 
-    if (result.success !== true) {
-      throw new Error(result.error || 'Sheet write not confirmed');
+  try {
+    let result = await sendToSheet(payload);
+
+    // Compatibility for an older Apps Script deployment that still required
+    // an email even though the public form no longer asks for one.
+    if (
+      result &&
+      result.success !== true &&
+      typeof result.error === 'string' &&
+      /email/i.test(result.error)
+    ) {
+      result = await sendToSheet({
+        ...payload,
+        email: 'not-collected@camy.invalid'
+      });
+    }
+
+    if (!result || result.success !== true) {
+      throw new Error((result && result.error) || 'Sheet write not confirmed');
     }
 
     if (result.registrationId && result.registrationId !== payload.registrationId) {
