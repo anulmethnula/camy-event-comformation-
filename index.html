@@ -3,564 +3,224 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#090606">
+<meta name="theme-color" content="#fffaf8">
 <title>CAMY Community Event 2026</title>
 <meta name="description" content="CAMY Community Event — 04 October 2026, 10:00 AM, Supun Arcade, Wellawatta.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Sinhala:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#080505;
-  --bg2:#120808;
-  --panel:rgba(20,13,13,.86);
-  --panel2:#120c0c;
-  --red:#ef3340;
-  --red2:#a9141f;
-  --red3:#6f0f16;
-  --text:#fff8f6;
-  --muted:#b4a7a2;
-  --soft:#7e716d;
-  --line:rgba(255,255,255,.08);
-  --shadow:0 30px 90px rgba(0,0,0,.48);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  min-height:100vh;
-  color:var(--text);
-  font-family:Inter,system-ui,-apple-system,sans-serif;
-  background:
-    radial-gradient(circle at 12% 15%,rgba(132,15,23,.28),transparent 28%),
-    radial-gradient(circle at 92% 20%,rgba(88,9,14,.18),transparent 24%),
-    linear-gradient(180deg,#090606 0%,#0c0707 46%,#070404 100%);
-  overflow-x:hidden;
-}
-body:before{
-  content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background:
-    linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.018) 1px,transparent 1px);
-  background-size:64px 64px;
-  mask-image:linear-gradient(to bottom,rgba(0,0,0,.9),transparent 86%);
-}
-.bgGlow{
-  position:fixed;inset:auto;pointer-events:none;z-index:0;border-radius:50%;filter:blur(90px);opacity:.26
-}
-.g1{width:320px;height:320px;background:#7b1118;left:-100px;top:100px;animation:float1 12s ease-in-out infinite}
-.g2{width:260px;height:260px;background:#4d0a0f;right:-80px;bottom:50px;animation:float2 14s ease-in-out infinite}
-@keyframes float1{50%{transform:translate(70px,40px) scale(1.06)}}
-@keyframes float2{50%{transform:translate(-45px,-30px) scale(.92)}}
-.shell{width:min(1180px,calc(100% - 34px));margin:auto;position:relative;z-index:2}
-nav{
-  display:flex;align-items:center;justify-content:space-between;padding:24px 0 18px
-}
-.brand{display:flex;align-items:center;gap:12px}
-.logoBox{
-  width:58px;height:58px;border-radius:18px;background:#fff;display:grid;place-items:center;
-  box-shadow:0 14px 34px rgba(0,0,0,.28);overflow:hidden
-}
-.logoBox img{width:47px;height:47px;object-fit:contain}
-.brand strong{display:block;font:800 17px Manrope;letter-spacing:-.03em}
-.brand span{display:block;color:#8f8380;font-size:12px;margin-top:2px}
-.freeBadge{
-  font-size:10px;font-weight:800;letter-spacing:.12em;color:#f0c7c9;
-  border:1px solid rgba(239,51,64,.24);background:rgba(31,17,18,.72);
-  padding:10px 13px;border-radius:999px;backdrop-filter:blur(10px)
-}
-.hero{
-  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(430px,.95fr);
-  gap:66px;align-items:center;padding:56px 0 68px
-}
-.heroCopy{position:relative}
-.kicker{
-  display:inline-flex;align-items:center;gap:10px;
-  font-size:11px;font-weight:800;letter-spacing:.15em;color:#d99a9e;text-transform:uppercase
-}
-.kicker i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(239,51,64,.08),0 0 18px rgba(239,51,64,.35)}
-h1{
-  font:800 clamp(54px,6.2vw,88px)/.95 Manrope;
-  letter-spacing:-.065em;margin:22px 0 22px;max-width:780px
-}
-h1 .red{
-  background:linear-gradient(90deg,#ef3340,#ff676f 68%,#f2c1c3);
-  -webkit-background-clip:text;background-clip:text;color:transparent
-}
-.heroText{max-width:610px;color:#b8aca8;line-height:1.8;font-size:16px;margin:0}
-.warning{
-  margin-top:28px;max-width:670px;padding:17px 18px 17px 20px;
-  border-left:3px solid var(--red);border-radius:0 15px 15px 0;
-  background:linear-gradient(90deg,rgba(71,19,22,.34),rgba(24,14,14,.48));
-  color:#bfb2ae;font-size:12.5px;line-height:1.72
-}
-.warning strong{color:#fff}
-.details{
-  display:flex;flex-wrap:wrap;gap:10px;margin-top:24px
-}
-.detail{
-  display:flex;align-items:center;gap:9px;padding:11px 13px;border-radius:13px;
-  background:rgba(19,12,12,.66);border:1px solid var(--line);color:#d8ceca;font-size:12px
-}
-.detail small{color:#857a76}
-.countWrap{margin-top:28px}
-.countLabel{font-size:10px;letter-spacing:.15em;font-weight:800;color:#766b67;margin-bottom:10px}
-.countdown{display:flex;gap:9px}
-.unit{
-  min-width:76px;padding:11px 10px 10px;border-radius:14px;text-align:center;
-  background:linear-gradient(180deg,rgba(24,15,15,.92),rgba(14,9,9,.92));
-  border:1px solid var(--line);box-shadow:inset 0 1px rgba(255,255,255,.025)
-}
-.unit b{display:block;font:800 24px Manrope;letter-spacing:-.04em}
-.unit small{font-size:9px;letter-spacing:.08em;color:#766b68;font-weight:700}
-
-.formCard{
-  position:relative;padding:30px;border-radius:30px;overflow:hidden;
-  background:
-    linear-gradient(160deg,rgba(31,19,20,.94),rgba(13,9,9,.97));
-  border:1px solid rgba(255,255,255,.085);
-  box-shadow:var(--shadow),0 0 70px rgba(123,17,24,.09);
-  backdrop-filter:blur(18px)
-}
-.formCard:before{
-  content:"";position:absolute;width:260px;height:260px;border-radius:50%;
-  right:-120px;top:-140px;background:rgba(239,51,64,.13);filter:blur(26px);pointer-events:none
-}
-.formCard:after{
-  content:"";position:absolute;inset:0;pointer-events:none;
-  background:linear-gradient(135deg,rgba(255,255,255,.025),transparent 30%,rgba(239,51,64,.025) 72%,transparent)
-}
-.formInner{position:relative;z-index:1}
-.formHead{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;margin-bottom:24px}
-.formHead h2{font:800 26px Manrope;letter-spacing:-.04em;margin:0}
-.formHead p{margin:6px 0 0;color:#8d817d;font-size:12px}
-.registerTag{
-  padding:7px 9px;border-radius:999px;background:#241415;border:1px solid rgba(239,51,64,.18);
-  color:#dcaeb1;font-size:9px;font-weight:800;letter-spacing:.1em
-}
-.field{margin-bottom:14px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-label{
-  display:block;font-size:10px;letter-spacing:.05em;font-weight:800;color:#9a8e8a;margin-bottom:7px
-}
-input,textarea{
-  width:100%;border:1px solid rgba(255,255,255,.075);background:#100b0b;color:#fff;
-  border-radius:13px;padding:14px 14px;font:inherit;outline:none;transition:.18s ease
-}
-textarea{min-height:88px;resize:vertical}
-input:focus,textarea:focus{
-  border-color:rgba(239,51,64,.55);box-shadow:0 0 0 4px rgba(239,51,64,.075)
-}
-input::placeholder,textarea::placeholder{color:#665b58}
-.counter{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}
-.counter button{
-  border:1px solid rgba(239,51,64,.16);background:#1b1111;color:#ebc4c6;
-  border-radius:12px;font-size:22px;cursor:pointer;transition:.18s
-}
-.counter button:hover{transform:translateY(-1px);background:#241515}
-.counter input{text-align:center;font-weight:800}
-.attend{
-  margin:2px 0 16px;padding:14px;border-radius:14px;
-  background:rgba(27,16,16,.78);border:1px solid rgba(239,51,64,.14)
-}
-.attendTitle{font-size:10px;color:#887b78;font-weight:800;margin-bottom:9px}
-.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}
-.choice span{
-  display:flex;min-height:45px;align-items:center;justify-content:center;text-align:center;
-  background:#110b0b;border:1px solid rgba(255,255,255,.075);border-radius:11px;
-  color:#a89c98;font-size:11px;font-weight:700;cursor:pointer;transition:.18s
-}
-.choice span:hover{border-color:rgba(239,51,64,.22);background:#171010}
-.choice input:checked+span{
-  color:white;background:linear-gradient(135deg,#8f121a,#ca2c35);
-  border-color:transparent;box-shadow:0 12px 28px rgba(142,18,26,.22)
-}
-.submitBtn,.downloadBtn{
-  width:100%;min-height:54px;border:0;border-radius:13px;
-  font:800 13px Manrope;cursor:pointer;transition:.2s
-}
-.submitBtn{
-  color:#fff;background:linear-gradient(135deg,#90131a,#cc2f38 68%,#ed4b55);
-  box-shadow:0 18px 38px rgba(137,18,25,.24);position:relative;overflow:hidden
-}
-.submitBtn:before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.18) 47%,transparent 72%);
-  transform:translateX(-120%);transition:.65s
-}
-.submitBtn:hover:before{transform:translateX(120%)}
-.submitBtn:hover,.downloadBtn:hover{transform:translateY(-2px);filter:brightness(1.05)}
-.submitBtn:disabled{opacity:.62;cursor:not-allowed;transform:none}
-.formNote{text-align:center;color:#6d625f;font-size:9.5px;margin-top:10px}
-.success{display:none;text-align:center;padding:8px 0}
-.successIcon{
-  width:70px;height:70px;margin:0 auto 17px;border-radius:22px;display:grid;place-items:center;
-  background:linear-gradient(145deg,#281516,#190e0f);border:1px solid rgba(239,51,64,.18);
-  color:#ef4b55;font-size:30px;box-shadow:0 12px 30px rgba(0,0,0,.18)
-}
-.success h2{font:800 29px Manrope;margin:0 0 8px;letter-spacing:-.04em}
-.success p{color:#9f938f;font-size:13px;line-height:1.65}
-.ticketSummary{
-  margin:20px 0;padding:17px;border-radius:14px;text-align:left;
-  background:#120c0c;border:1px solid var(--line)
-}
-.ticketSummary strong{display:block;margin-bottom:7px}
-.ticketSummary span{display:block;font-size:12px;color:#918682;line-height:1.75}
-.downloadBtn{
-  display:block;text-decoration:none;line-height:54px;background:#f5efec;color:#1a1212
-}
-.again{
-  border:0;background:none;color:#877b77;text-decoration:underline;margin-top:12px;cursor:pointer
-}
-.perks{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 68px
-}
-.perk{
-  padding:19px 4px;border-top:1px solid rgba(255,255,255,.07)
-}
-.perk b{display:block;font:700 14px Manrope;margin-bottom:6px}
-.perk span{font-size:12px;line-height:1.55;color:#827673}
-footer{
-  border-top:1px solid rgba(255,255,255,.06);padding:24px 0 34px;color:#655b58;
-  font-size:10.5px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap
-}
-.toast{
-  position:fixed;left:50%;bottom:24px;z-index:20;transform:translate(-50%,16px);
-  opacity:0;pointer-events:none;background:#211516;border:1px solid var(--line);
-  color:white;padding:11px 14px;border-radius:11px;font-size:12px;transition:.22s
-}
-.toast.show{opacity:1;transform:translate(-50%,0)}
-.reveal{opacity:0;transform:translateY(16px);animation:rise .65s cubic-bezier(.2,.8,.2,1) forwards}
-.delay1{animation-delay:.08s}.delay2{animation-delay:.16s}
-@keyframes rise{to{opacity:1;transform:none}}
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;gap:40px;padding-top:28px}
-  .heroCopy{text-align:center}.heroText,.warning{margin-left:auto;margin-right:auto}.warning{text-align:left}
-  .details,.countdown{justify-content:center}.formCard{max-width:650px;margin:auto}.perks{grid-template-columns:1fr}
-}
-@media(max-width:560px){
-  .shell{width:min(100% - 22px,1180px)}
-  nav{padding-top:14px}.logoBox{width:50px;height:50px;border-radius:15px}.logoBox img{width:40px;height:40px}
-  .brand strong{font-size:15px}.brand span{display:none}.freeBadge{font-size:8px;padding:8px 9px}
-  h1{font-size:48px}.hero{padding-top:18px}.row,.choices{grid-template-columns:1fr}
-  .formCard{padding:20px;border-radius:23px}.countdown{gap:6px}.unit{min-width:0;flex:1;padding:10px 5px}.unit b{font-size:20px}
-}
-@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+:root{--red:#ef343e;--red2:#c9232e;--ink:#1d1d1f;--muted:#6f6f73;--line:#eadfda;--soft:#fff6f3;--card:#fff;--green:#2f7d4f}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:linear-gradient(180deg,#fffaf8,#fff 45%,#fff8f5);color:var(--ink);font-family:Inter,"Noto Sans Sinhala","Noto Sans Tamil",system-ui,sans-serif}
+.shell{width:min(1120px,calc(100% - 30px));margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0}
+.brand{display:flex;gap:11px;align-items:center}.logo{width:52px;height:52px;border:1px solid #eee1dc;border-radius:16px;background:white;display:grid;place-items:center;box-shadow:0 8px 24px #53231910}.logo img{width:42px;height:42px;object-fit:contain}.brand b{display:block;font-size:16px}.brand span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.badge{padding:9px 12px;border-radius:999px;background:#fff0ed;color:#b8242c;border:1px solid #f2cbc6;font-weight:800;font-size:10px;letter-spacing:.04em}
+.hero{display:grid;grid-template-columns:.9fr 1.1fr;gap:48px;align-items:start;padding:42px 0 50px}
+.copy{padding-top:18px}.eyebrow{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--red2);margin-bottom:16px}
+h1{font-size:clamp(46px,6vw,76px);line-height:.98;letter-spacing:-.055em;margin:0 0 28px}.red{color:var(--red)}
+.notice{background:#fff0ed;border:1px solid #f2d1ca;border-radius:18px;padding:18px 18px;margin:0 0 24px;line-height:1.65;font-size:13px}.notice b{display:block;color:#9f2027;font-size:14px;margin-bottom:7px}.notice p{margin:4px 0}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.detail{background:white;border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;gap:10px;align-items:center;font-size:12px;box-shadow:0 6px 18px #5025170b}
+.countLabel{margin:26px 0 10px;color:#9a8b85;font-size:9px;font-weight:800;letter-spacing:.12em}.countdown{display:flex;gap:10px}.unit{min-width:72px;text-align:center;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px}.unit b{display:block;font-size:23px}.unit small{font-size:8px;color:#958883;font-weight:700}
+.card{background:var(--card);border:1px solid #eaded9;border-radius:26px;padding:28px;box-shadow:0 24px 70px #6d2a1814;position:relative;overflow:hidden}.card:before{content:"";position:absolute;inset:0 0 auto;height:5px;background:linear-gradient(90deg,var(--red),#ff8a80)}
+.formHead{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:20px}.formHead h2{font-size:27px;letter-spacing:-.04em;margin:0}.formHead p{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.tag{font-size:9px;font-weight:800;color:#b8242c;background:#fff0ed;border-radius:999px;padding:8px 10px}
+.field{margin-bottom:15px}.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}label{display:block;font-size:12px;font-weight:800;margin-bottom:7px;color:#383437}.si{font-weight:600;color:#746965}
+input,textarea{width:100%;border:1px solid #ded6d2;background:#fffdfa;border-radius:12px;padding:14px 14px;font:inherit;color:var(--ink);outline:none;transition:.18s}textarea{min-height:82px;resize:vertical}input:focus,textarea:focus{border-color:#ef7077;box-shadow:0 0 0 4px #ef343e12}input::placeholder,textarea::placeholder{color:#aaa09b}
+.counter{display:grid;grid-template-columns:46px 1fr 46px;gap:8px}.counter button{border:1px solid #ead8d3;background:#fff5f2;color:#b92b32;border-radius:12px;font-size:22px;cursor:pointer}.counter input{text-align:center;font-weight:800;background:white}
+.attend{background:#fff8f5;border:1px solid #f0ddd6;border-radius:15px;padding:14px;margin:2px 0 16px}.attendTitle{font-size:12px;font-weight:800;line-height:1.55;margin-bottom:10px}.choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice{position:relative;margin:0}.choice input{position:absolute;opacity:0}.choice span{min-height:48px;border:1px solid #e5d9d4;border-radius:11px;background:white;display:flex;align-items:center;justify-content:center;text-align:center;padding:8px;font-size:11px;font-weight:700;color:#625b58;cursor:pointer}.choice input:checked+span{background:#fff0ed;border-color:#ef777d;color:#aa2229;box-shadow:0 0 0 3px #ef343e0d}
+.submit{width:100%;min-height:54px;border:0;border-radius:12px;background:linear-gradient(135deg,#df2a34,#f14953);color:#fff;font-size:13px;font-weight:800;cursor:pointer;box-shadow:0 12px 28px #dc29352c}.submit:disabled{opacity:.6;cursor:wait}.note{text-align:center;font-size:10px;color:#8d827e;margin-top:10px}
+.error{background:#fff1ee;border:1px solid #f0c6bf;color:#a5262d;border-radius:11px;padding:12px;font-size:12px;margin-bottom:14px}
+.success{text-align:center;padding:8px 0}.successIcon{width:66px;height:66px;border-radius:50%;display:grid;place-items:center;background:#edf8f1;color:var(--green);font-size:28px;margin:0 auto 16px}.success h2{font-size:28px;margin:0 0 8px}.success p{color:var(--muted);font-size:13px;line-height:1.6}
+.preview{margin:18px auto;max-width:320px;border-radius:16px;overflow:hidden;border:1px solid #eaded9;box-shadow:0 12px 30px #4f241415}.preview img{display:block;width:100%;height:auto}
+.download{display:block;text-decoration:none;background:#1d1d1f;color:white;border-radius:12px;min-height:52px;line-height:52px;font-weight:800;font-size:13px}.again{border:0;background:none;text-decoration:underline;color:#7a6d68;margin-top:12px;cursor:pointer}
+.perks{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding:0 0 44px}.perk{background:#fff;border:1px solid var(--line);border-radius:14px;padding:17px}.perk b{font-size:13px}.perk span{display:block;color:var(--muted);font-size:11px;line-height:1.55;margin-top:5px}
+footer{border-top:1px solid var(--line);padding:22px 0 32px;color:#8a7e79;font-size:10px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,15px);opacity:0;pointer-events:none;background:#231f20;color:white;padding:11px 14px;border-radius:10px;font-size:12px;transition:.2s;z-index:20}.toast.show{opacity:1;transform:translate(-50%,0)}
+[hidden]{display:none!important}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:30px;padding-top:20px}.copy{padding-top:0}.details{max-width:620px}.card{max-width:650px;margin:auto;width:100%}}
+@media(max-width:560px){.shell{width:calc(100% - 20px)}nav{padding:13px 0}.logo{width:45px;height:45px;border-radius:13px}.logo img{width:36px;height:36px}.brand b{font-size:14px}.brand span{display:none}.badge{font-size:8px;padding:8px 9px}.hero{padding-top:12px}h1{font-size:46px;margin-bottom:22px}.notice{font-size:12px;padding:15px}.details,.row,.choices{grid-template-columns:1fr}.detail{padding:12px}.countdown{gap:6px}.unit{min-width:0;flex:1;padding:9px 4px}.unit b{font-size:20px}.card{padding:22px 17px;border-radius:20px}.formHead h2{font-size:23px}.perks{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="bgGlow g1"></div><div class="bgGlow g2"></div>
-
 <div class="shell">
-<nav class="reveal">
-  <div class="brand">
-    <div class="logoBox"><img src="./Screenshot%202026-09-18%20092439.png" alt="CAMY logo"></div>
-    <div><strong>CAMY Community</strong><span>Community Event 2026</span></div>
-  </div>
-  <div class="freeBadge">100% FREE EVENT</div>
+<nav>
+  <div class="brand"><div class="logo"><img src="./Screenshot%202026-09-18%20092439.png" alt="CAMY logo"></div><div><b>CAMY Community</b><span>Community Event 2026</span></div></div>
+  <div class="badge">100% FREE EVENT</div>
 </nav>
 
 <main class="hero">
-  <section class="heroCopy reveal">
-    <div class="kicker"><i></i>CAMY COMMUNITY · OCTOBER 2026</div>
+<section class="copy">
+  <div class="eyebrow">CAMY COMMUNITY · OCTOBER 2026</div>
+  <h1>Meet people.<br><span class="red">Build something real.</span></h1>
 
-    <h1>Meet people.<br><span class="red">Build something real.</span></h1>
+  <div class="notice">
+    <b>This registration is only for people who will come to the event in person.</b>
+    <p>මේ ලියාපදිංචිය <strong>උත්සවයට එන අයට විතරයි.</strong></p>
+    <p>இந்த பதிவு <strong>நிகழ்ச்சிக்கு நேரில் வருபவர்களுக்கு மட்டும்.</strong></p>
+  </div>
 
-    <p class="heroText">
-      Join CAMY in person for a day of useful conversations, new connections and fresh opportunities.
-      Free entry, lunch and a welcome drink are included.
-    </p>
+  <div class="details">
+    <div class="detail">📅 <span>04 October 2026</span></div>
+    <div class="detail">🕙 <span>10:00 AM</span></div>
+    <div class="detail">📍 <span>Supun Arcade, Wellawatta</span></div>
+    <div class="detail">🍽️ <span>Lunch + Welcome Drink FREE</span></div>
+  </div>
 
-    <div class="warning">
-      <strong>This registration is ONLY for people who are physically attending the event.</strong><br>
-      මෙම ලියාපදිංචිය උත්සවයට <strong>භෞතිකව සහභාගී වන පුද්ගලයින් සඳහා පමණි.</strong><br>
-      இந்த பதிவு நிகழ்வில் <strong>நேரடியாக கலந்துகொள்ளும் நபர்களுக்கு மட்டுமே.</strong>
-    </div>
-
-    <div class="details">
-      <div class="detail">📅 <span>04 October 2026</span></div>
-      <div class="detail">🕙 <span>10:00 AM</span></div>
-      <div class="detail">📍 <span>Supun Arcade, Wellawatta</span></div>
-      <div class="detail">🍽️ <span>Lunch + Welcome Drink FREE</span></div>
-    </div>
-
-    <div class="countWrap">
-      <div class="countLabel">EVENT STARTS IN</div>
-      <div class="countdown">
-        <div class="unit"><b id="d">--</b><small>DAYS</small></div>
-        <div class="unit"><b id="h">--</b><small>HOURS</small></div>
-        <div class="unit"><b id="m">--</b><small>MIN</small></div>
-        <div class="unit"><b id="s">--</b><small>SEC</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="formCard reveal delay1">
-    <div class="formInner" id="formView">
-      <div class="formHead">
-        <div>
-          <h2>Reserve your place</h2>
-          <p>One minute. No payment. Just confirm your attendance.</p>
-        </div>
-        <span class="registerTag">REGISTER</span>
-      </div>
-
-      <form id="form">
-        <div class="field">
-          <label for="name">FULL NAME</label>
-          <input id="name" required maxlength="100" autocomplete="name" placeholder="Enter your full name">
-        </div>
-
-        <div class="field">
-          <label for="address">ADDRESS</label>
-          <textarea id="address" required maxlength="220" autocomplete="street-address" placeholder="Enter your address"></textarea>
-        </div>
-
-        <div class="row">
-          <div class="field">
-            <label for="city">CITY</label>
-            <input id="city" required maxlength="80" autocomplete="address-level2" placeholder="e.g. Colombo">
-          </div>
-          <div class="field">
-            <label for="contact">CONTACT NUMBER</label>
-            <input id="contact" type="tel" required maxlength="20" autocomplete="tel" placeholder="07X XXX XXXX">
-          </div>
-        </div>
-
-        <div class="field">
-          <label>PEOPLE COMING WITH YOU</label>
-          <div class="counter">
-            <button type="button" id="minus" aria-label="Decrease guests">−</button>
-            <input id="guests" value="0" readonly aria-label="Additional guests">
-            <button type="button" id="plus" aria-label="Increase guests">+</button>
-          </div>
-        </div>
-
-        <div class="attend">
-          <div class="attendTitle">WILL YOU DEFINITELY ATTEND IN PERSON?</div>
-          <div class="choices">
-            <label class="choice">
-              <input type="radio" name="att" value="Yes" required>
-              <span>✓ Yes, I will attend</span>
-            </label>
-            <label class="choice">
-              <input type="radio" name="att" value="No">
-              <span>✕ No, I can't attend</span>
-            </label>
-          </div>
-        </div>
-
-        <button class="submitBtn" id="submit" type="submit">Confirm Free Registration →</button>
-        <div class="formNote">Your invitation card will be ready to download after registration.</div>
-      </form>
-    </div>
-
-    <div class="success" id="success">
-      <div class="successIcon">✓</div>
-      <h2>You're on the list</h2>
-      <p>Your CAMY registration is confirmed.<br>Registration ID: <strong id="regId"></strong></p>
-
-      <div class="ticketSummary">
-        <strong>CAMY Community Event 2026</strong>
-        <span>04 October 2026 · 10:00 AM</span>
-        <span>Supun Arcade, Wellawatta</span>
-        <span>100% FREE · Lunch + Welcome Drink included</span>
-      </div>
-
-      <a class="downloadBtn" id="download" download="CAMY-Invitation.png">Download Invitation Card ↓</a>
-      <button class="again" type="button" onclick="location.reload()">Register another person</button>
-    </div>
-  </section>
-</main>
-
-<section class="perks reveal delay2">
-  <div class="perk"><b>Free entry</b><span>No registration fee and no event admission fee.</span></div>
-  <div class="perk"><b>Free lunch</b><span>Lunch is included for every registered physical attendee.</span></div>
-  <div class="perk"><b>Welcome drink included</b><span>Your welcome drink is on CAMY.</span></div>
+  <div class="countLabel">EVENT STARTS IN</div>
+  <div class="countdown">
+    <div class="unit"><b id="d">--</b><small>DAYS</small></div>
+    <div class="unit"><b id="h">--</b><small>HOURS</small></div>
+    <div class="unit"><b id="m">--</b><small>MIN</small></div>
+    <div class="unit"><b id="s">--</b><small>SEC</small></div>
+  </div>
 </section>
 
-<footer>
-  <span>© 2026 CAMY Community</span>
-  <span>04 October 2026 · Supun Arcade, Wellawatta</span>
-</footer>
-</div>
+<section class="card" id="registration">
+  <div id="formView">
+    <div class="formHead"><div><h2>Register for the event</h2><p>Fill this simple form. No payment needed.<br><span class="si">පහළ විස්තර ටික පුරවන්න. ගෙවීමක් අවශ්‍ය නැහැ.</span></p></div><span class="tag">REGISTER</span></div>
 
+    <form id="form">
+      <div id="formError" class="error" hidden></div>
+
+      <div class="field">
+        <label for="name">FULL NAME <span class="si">/ සම්පූර්ණ නම</span></label>
+        <input id="name" required maxlength="100" autocomplete="name" placeholder="Your name / ඔබේ නම">
+      </div>
+
+      <div class="field">
+        <label for="address">ADDRESS <span class="si">/ ලිපිනය</span></label>
+        <textarea id="address" required maxlength="220" autocomplete="street-address" placeholder="Your address / ඔබේ ලිපිනය"></textarea>
+      </div>
+
+      <div class="row">
+        <div class="field">
+          <label for="city">CITY <span class="si">/ නගරය</span></label>
+          <input id="city" required maxlength="80" autocomplete="address-level2" placeholder="e.g. Colombo">
+        </div>
+        <div class="field">
+          <label for="contact">CONTACT NUMBER <span class="si">/ දුරකථන අංකය</span></label>
+          <input id="contact" type="tel" required maxlength="20" autocomplete="tel" placeholder="07X XXX XXXX">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>PEOPLE COMING WITH YOU <span class="si">/ ඔබ සමඟ එන අය ගණන</span></label>
+        <div class="counter">
+          <button type="button" id="minus" aria-label="Decrease guests">−</button>
+          <input id="guests" value="0" readonly aria-label="Additional guests">
+          <button type="button" id="plus" aria-label="Increase guests">+</button>
+        </div>
+      </div>
+
+      <div class="attend">
+        <div class="attendTitle">WILL YOU DEFINITELY ATTEND IN PERSON?<br><span class="si">ඔබ අනිවාර්යයෙන්ම උත්සවයට එනවාද?</span></div>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="att" value="Yes" required><span>✓ Yes, I will attend<br>ඔව්, මම එනවා</span></label>
+          <label class="choice"><input type="radio" name="att" value="No"><span>✕ No, I can't attend<br>නැහැ, මට එන්න බැහැ</span></label>
+        </div>
+      </div>
+
+      <button class="submit" id="submit" type="submit">Confirm Free Registration / ලියාපදිංචිය තහවුරු කරන්න</button>
+      <div class="note">After registration, your personal invitation card will be ready to download.<br>ලියාපදිංචි වූ පසු ඔබේ නම සහිත ආරාධනා පත බාගත කළ හැක.</div>
+    </form>
+  </div>
+
+  <div class="success" id="success" hidden>
+    <div class="successIcon">✓</div>
+    <h2>Registration confirmed!</h2>
+    <p>ඔබගේ ලියාපදිංචිය සාර්ථකයි.<br>Registration ID: <strong id="regId"></strong></p>
+    <div class="preview"><img id="invitePreview" alt="Your CAMY invitation card"></div>
+    <a class="download" id="download" download="CAMY-Invitation.png">Download Invitation Card / ආරාධනා පත බාගන්න ↓</a>
+    <button class="again" id="again" type="button">Register another person</button>
+  </div>
+</section>
+</main>
+
+<section class="perks">
+  <div class="perk"><b>100% Free</b><span>No registration or entrance fee.</span></div>
+  <div class="perk"><b>Free Lunch</b><span>Lunch is included for registered attendees.</span></div>
+  <div class="perk"><b>Welcome Drink</b><span>A welcome drink is included.</span></div>
+</section>
+
+<footer><span>© 2026 CAMY Community</span><span>04 October 2026 · Supun Arcade, Wellawatta</span></footer>
+</div>
 <div class="toast" id="toast"></div>
 
 <script>
 const START=new Date("2026-10-04T10:00:00+05:30").getTime();
+const form=document.getElementById("form"),nameEl=document.getElementById("name"),addressEl=document.getElementById("address"),cityEl=document.getElementById("city"),contactEl=document.getElementById("contact"),guestsEl=document.getElementById("guests"),minusEl=document.getElementById("minus"),plusEl=document.getElementById("plus"),submitEl=document.getElementById("submit"),formView=document.getElementById("formView"),success=document.getElementById("success"),regIdEl=document.getElementById("regId"),downloadEl=document.getElementById("download"),previewEl=document.getElementById("invitePreview"),toast=document.getElementById("toast"),formError=document.getElementById("formError");
 
-const form=document.getElementById("form");
-const nameEl=document.getElementById("name");
-const addressEl=document.getElementById("address");
-const cityEl=document.getElementById("city");
-const contactEl=document.getElementById("contact");
-const guestsEl=document.getElementById("guests");
-const minusEl=document.getElementById("minus");
-const plusEl=document.getElementById("plus");
-const submitEl=document.getElementById("submit");
-const formView=document.getElementById("formView");
-const success=document.getElementById("success");
-const regIdEl=document.getElementById("regId");
-const downloadEl=document.getElementById("download");
-const toast=document.getElementById("toast");
-
-function setGuests(value){
-  const n=Math.max(0,Math.min(20,value));
-  guestsEl.value=n;
-  minusEl.disabled=n===0;
-  plusEl.disabled=n===20;
-}
+function setGuests(v){const n=Math.max(0,Math.min(20,v));guestsEl.value=n;minusEl.disabled=n===0;plusEl.disabled=n===20}
 minusEl.addEventListener("click",()=>setGuests(Number(guestsEl.value)-1));
-plusEl.addEventListener("click",()=>setGuests(Number(guestsEl.value)+1));
-setGuests(0);
+plusEl.addEventListener("click",()=>setGuests(Number(guestsEl.value)+1));setGuests(0);
 
-function showToast(message){
-  toast.textContent=message;
-  toast.classList.add("show");
-  clearTimeout(window.camyToast);
-  window.camyToast=setTimeout(()=>toast.classList.remove("show"),3000);
-}
-
-function makeId(){
-  return "CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,5).toUpperCase();
-}
-
-function tick(){
-  let r=Math.max(0,START-Date.now());
-  const days=Math.floor(r/86400000);r%=86400000;
-  const hours=Math.floor(r/3600000);r%=3600000;
-  const mins=Math.floor(r/60000);
-  const secs=Math.floor((r%60000)/1000);
-  document.getElementById("d").textContent=String(days).padStart(2,"0");
-  document.getElementById("h").textContent=String(hours).padStart(2,"0");
-  document.getElementById("m").textContent=String(mins).padStart(2,"0");
-  document.getElementById("s").textContent=String(secs).padStart(2,"0");
-}
+function showToast(m){toast.textContent=m;toast.classList.add("show");clearTimeout(window.camyToast);window.camyToast=setTimeout(()=>toast.classList.remove("show"),3000)}
+function showError(m){formError.textContent=m;formError.hidden=false;formError.scrollIntoView({behavior:"smooth",block:"nearest"})}
+function makeId(){return "CAMY-"+Date.now().toString(36).toUpperCase()+"-"+Math.random().toString(36).slice(2,5).toUpperCase()}
+function tick(){let r=Math.max(0,START-Date.now());const d=Math.floor(r/86400000);r%=86400000;const h=Math.floor(r/3600000);r%=3600000;const m=Math.floor(r/60000),s=Math.floor((r%60000)/1000);document.getElementById("d").textContent=String(d).padStart(2,"0");document.getElementById("h").textContent=String(h).padStart(2,"0");document.getElementById("m").textContent=String(m).padStart(2,"0");document.getElementById("s").textContent=String(s).padStart(2,"0")}
 tick();setInterval(tick,1000);
 
-function rr(ctx,x,y,w,h,r){
-  ctx.beginPath();
-  if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);
-  else ctx.rect(x,y,w,h);
-}
+function roundRect(ctx,x,y,w,h,r){ctx.beginPath();if(ctx.roundRect)ctx.roundRect(x,y,w,h,r);else ctx.rect(x,y,w,h)}
+function invitation(data){
+  const c=document.createElement("canvas");c.width=1000;c.height=1400;const x=c.getContext("2d");
+  x.fillStyle="#fff";x.fillRect(0,0,c.width,c.height);
+  x.strokeStyle="#ea2634";x.lineWidth=18;x.strokeRect(12,12,976,1376);
+  x.fillStyle="#ef2f3c";x.fillRect(0,0,1000,28);x.fillRect(0,1372,1000,28);
 
-function createInvitation(person,rid,total){
-  const c=document.createElement("canvas");
-  c.width=1200;c.height=1500;
-  const x=c.getContext("2d");
-
-  const bg=x.createLinearGradient(0,0,1200,1500);
-  bg.addColorStop(0,"#080505");
-  bg.addColorStop(.5,"#140909");
-  bg.addColorStop(1,"#080505");
-  x.fillStyle=bg;x.fillRect(0,0,1200,1500);
-
-  const glow=x.createRadialGradient(950,170,10,950,170,540);
-  glow.addColorStop(0,"rgba(239,51,64,.26)");
-  glow.addColorStop(1,"rgba(239,51,64,0)");
-  x.fillStyle=glow;x.fillRect(0,0,1200,1500);
-
-  x.strokeStyle="rgba(255,255,255,.12)";
-  x.lineWidth=2;x.strokeRect(58,58,1084,1384);
-  x.strokeStyle="#a71821";
-  x.lineWidth=4;x.strokeRect(80,80,1040,1340);
-
-  const logo=document.querySelector(".logoBox img");
-  x.fillStyle="#fff";rr(x,472,110,256,256,38);x.fill();
-  if(logo && logo.complete && logo.naturalWidth>0)x.drawImage(logo,512,150,176,176);
+  // corner accents
+  x.strokeStyle="#f7b9bd";x.lineWidth=3;
+  [[44,78,70,70],[886,78,-70,70],[44,1252,70,-70],[886,1252,-70,-70]].forEach(a=>{x.beginPath();x.moveTo(a[0],a[1]);x.lineTo(a[0]+a[2],a[1]);x.moveTo(a[0],a[1]);x.lineTo(a[0],a[1]+a[3]);x.stroke()});
 
   x.textAlign="center";
-  x.fillStyle="#e64b55";x.font="800 22px Arial";x.fillText("CAMY COMMUNITY · 2026",600,430);
+  x.fillStyle="#ed2331";x.font="900 78px Arial";x.fillText("CAMY",500,210);
+  x.fillStyle="#ea2634";x.font="800 28px Arial";x.fillText("COMMUNITY EVENT",500,280);
+  x.fillStyle="#171717";x.font="900 70px Arial";x.fillText("Official",500,390);x.fillText("Invitation",500,466);
 
-  x.fillStyle="#ffffff";x.font="800 86px Arial";
-  x.fillText("OFFICIAL",600,565);
-  x.fillText("INVITATION",600,655);
+  x.strokeStyle="#ef2f3c";x.lineWidth=5;x.beginPath();x.moveTo(320,515);x.lineTo(680,515);x.stroke();
 
-  x.fillStyle="#aaa09c";x.font="26px Arial";
-  x.fillText("Meet people. Build something real.",600,715);
+  x.fillStyle="#6e6e6e";x.font="24px Arial";x.fillText("This invitation is specially prepared for",500,585);
+  x.fillStyle="#111";x.font="800 40px Arial";x.fillText(data.name.toUpperCase().slice(0,30),500,650,820);
 
-  x.fillStyle="#c62d36";x.fillRect(485,765,230,5);
+  x.fillStyle="#ef2f3c";roundRect(x,160,725,680,255,28);x.fill();
+  x.fillStyle="#fff";x.font="800 34px Arial";x.fillText("OCTOBER 04, 2026",500,795);
+  x.font="800 24px Arial";x.fillText("SUNDAY  |  10:00 AM ONWARDS",500,850);
+  x.font="700 25px Arial";x.fillText("SUPUN ARCADE, COLOMBO 06",500,910);
+  x.font="22px Arial";x.fillText("Next to Wellawatta Sampath Bank",500,950);
 
-  x.fillStyle="#7f7471";x.font="700 19px Arial";
-  x.fillText("RESERVED FOR",600,850);
+  x.fillStyle="#171717";x.font="800 34px Arial";x.fillText("FREE LUNCH & REFRESHMENTS",500,1055);
+  x.fillStyle="#444";x.font="24px Arial";x.fillText("Join us and connect with the CAMY community",500,1110);
 
-  x.fillStyle="#ffffff";x.font="700 42px Arial";
-  x.fillText(person.toUpperCase().slice(0,30),600,915);
+  x.fillStyle="#fff0f0";roundRect(x,180,1175,640,110,20);x.fill();
+  x.fillStyle="#a5232c";x.font="700 21px Arial";x.fillText("Registration ID: "+data.registrationId,500,1223);
+  x.font="20px Arial";x.fillText("Total attendees: "+data.totalAttendees,500,1262);
 
-  x.fillStyle="rgba(255,255,255,.045)";
-  rr(x,205,1005,790,250,30);x.fill();
-  x.strokeStyle="rgba(255,255,255,.09)";x.lineWidth=2;rr(x,205,1005,790,250,30);x.stroke();
-
-  x.fillStyle="#fff";x.font="800 30px Arial";x.fillText("04 OCTOBER 2026 · 10:00 AM",600,1075);
-  x.fillStyle="#b7aaa6";x.font="25px Arial";x.fillText("SUPUN ARCADE, WELLAWATTA",600,1130);
-
-  x.fillStyle="#e84a53";x.font="900 29px Arial";x.fillText("100% FREE EVENT",600,1190);
-  x.fillStyle="#a99d99";x.font="21px Arial";x.fillText("Lunch + Welcome Drink Included",600,1230);
-
-  x.fillStyle="#817572";x.font="18px Arial";x.fillText("Total attendees: "+total,600,1320);
-  x.fillText("Registration ID: "+rid,600,1355);
-  x.fillStyle="#706562";x.font="16px Arial";x.fillText("Keep this invitation with you when attending.",600,1400);
-
+  x.fillStyle="#8b8b8b";x.font="17px Arial";x.fillText("Please keep this invitation with you when attending.",500,1335);
   return c.toDataURL("image/png");
 }
 
 form.addEventListener("submit",async e=>{
-  e.preventDefault();
-
-  if(!form.reportValidity())return;
-
+  e.preventDefault();formError.hidden=true;if(!form.reportValidity())return;
   const attendance=document.querySelector('input[name="att"]:checked');
-  if(!attendance)return showToast("Please confirm your attendance.");
-  if(attendance.value!=="Yes")return showToast("Registration is only for confirmed physical attendees.");
-
+  if(!attendance)return showError("Please select whether you will attend. / ඔබ එනවාද කියලා තෝරන්න.");
+  if(attendance.value!=="Yes")return showError("This registration is only for people coming to the event. / මේ ලියාපදිංචිය උත්සවයට එන අයට විතරයි.");
   const phone=contactEl.value.trim();
-  if(!/^[0-9+()\-\s]{7,20}$/.test(phone)){
-    contactEl.focus();
-    return showToast("Please enter a valid contact number.");
-  }
+  if(!/^[0-9+()\-\s]{7,20}$/.test(phone)){contactEl.focus();return showError("Please enter a valid contact number. / නිවැරදි දුරකථන අංකයක් දාන්න.");}
+  const rid=makeId(),guests=Number(guestsEl.value)||0;
+  const payload={registrationId:rid,name:nameEl.value.trim(),address:addressEl.value.trim(),city:cityEl.value.trim(),contact:phone,guests:String(guests),attendance:"Yes"};
 
-  const rid=makeId();
-  const guests=Number(guestsEl.value)||0;
-  const payload={
-    registrationId:rid,
-    name:nameEl.value.trim(),
-    address:addressEl.value.trim(),
-    city:cityEl.value.trim(),
-    contact:phone,
-    guests:String(guests),
-    attendance:"Yes"
-  };
-
-  submitEl.disabled=true;
-  submitEl.textContent="Registering…";
-
+  submitEl.disabled=true;submitEl.textContent="Registering… / ලියාපදිංචි වෙමින්…";
   try{
-    const response=await fetch("/api/register",{
-      method:"POST",
-      headers:{"Content-Type":"application/json"},
-      body:JSON.stringify(payload)
-    });
-
+    const response=await fetch("/api/register",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
     const result=await response.json().catch(()=>({success:false,error:"Invalid server response."}));
-
-    if(!response.ok || result.success!==true){
-      throw new Error(result.error||"Registration failed.");
-    }
-
-    regIdEl.textContent=rid;
-    downloadEl.href=createInvitation(payload.name,rid,guests+1);
-    formView.style.display="none";
-    success.style.display="block";
-    success.scrollIntoView({behavior:"smooth",block:"center"});
-  }catch(error){
-    console.error(error);
-    showToast(error.message||"Could not complete registration. Please try again.");
-    submitEl.disabled=false;
-    submitEl.textContent="Confirm Free Registration →";
-  }
+    if(!response.ok||result.success!==true)throw new Error(result.error||"Registration failed.");
+    const dataUrl=invitation({...payload,totalAttendees:String(guests+1)});
+    regIdEl.textContent=rid;downloadEl.href=dataUrl;previewEl.src=dataUrl;
+    formView.hidden=true;success.hidden=false;success.scrollIntoView({behavior:"smooth",block:"center"});
+  }catch(error){console.error(error);showToast(error.message||"Could not complete registration. Please try again.");}
+  finally{submitEl.disabled=false;submitEl.textContent="Confirm Free Registration / ලියාපදිංචිය තහවුරු කරන්න";}
 });
+document.getElementById("again").addEventListener("click",()=>{form.reset();setGuests(0);success.hidden=true;formView.hidden=false;formError.hidden=true;nameEl.focus()});
 </script>
 </body>
 </html>
