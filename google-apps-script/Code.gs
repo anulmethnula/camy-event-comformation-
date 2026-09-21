@@ -16,7 +16,6 @@ function doPost(e) {
     if(!p || !/^CAMY-[A-Z0-9-]{8,64}$/.test(p.registrationId || ''))throw new Error('Invalid registration reference.');
     for(const key of ['name','address','city','contact'])if(!p[key] || !p[key].trim())throw new Error('Missing '+key+'.');
     if(p.name.length>100||p.address.length>220||p.city.length>80||p.contact.length>20)throw new Error('Details are too long.');
-    if(!p.email || p.email.length>254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(p.email.trim()))throw new Error('Invalid email address.');
     const digits=p.contact.replace(/\D/g,'');
     if(!/^[+0-9()\s-]+$/.test(p.contact)||digits.length<9||digits.length>15)throw new Error('Invalid contact number.');
     const guests=Number(p.guests);
@@ -30,7 +29,7 @@ function doPost(e) {
     if(last>1 && sheet.getRange(2,1,last-1,1).createTextFinder(p.registrationId).matchEntireCell(true).findNext())return output({success:true,registrationId:p.registrationId});
     const row=sheet.getLastRow()+1;
     sheet.getRange(row,6).setNumberFormat('@');
-    sheet.getRange(row,1,1,HEADERS.length).setValues([[p.registrationId,new Date(),safeCell(p.name),safeCell(p.address),safeCell(p.city),safeCell(p.contact),guests,guests+1,'Yes','CAMY Community Event','04 October 2026',safeCell(p.email)]]);
+    sheet.getRange(row,1,1,HEADERS.length).setValues([[p.registrationId,new Date(),safeCell(p.name),safeCell(p.address),safeCell(p.city),safeCell(p.contact),guests,guests+1,'Yes','CAMY Community Event','04 October 2026','']]);
     SpreadsheetApp.flush();
     return output({success:true,registrationId:p.registrationId});
   } catch(error) {return output({success:false,error:error.message});}
